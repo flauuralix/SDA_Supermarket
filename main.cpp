@@ -16,3 +16,5 @@ int main()
 {
 	printf("Selamat Datang di supermarket, selamat berbelanja");
 }
+
+//test
