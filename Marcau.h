@@ -6,16 +6,18 @@
 #include <conio.h>
 #define Nil NULL
 
-typedef STRING infotype;
-
+typedef char infotype;
 typedef struct addressNode *address;
 typedef struct addressNode{
-  address prev;
   infotype info;
   address next;
-
 }AddressNode;
 
+typedef struct tElmtListdata *address;
+typedef struct tElmtListdata {
+	 infotype nm;
+	 address  br;
+} ElmtListdata;
 //tampilan nama supermarket marcau
 void header ();
 
