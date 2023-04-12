@@ -16,9 +16,7 @@ typedef struct tElmtListdata {
 	 infotype nm;
 	 addressdt  br;
 } ElmtListdata;
-
-
-//tampilan kasir 
+void pelanggan (address *First);
 void tampilanmenu();
 void pilihMenu(int *pilihan);
 void tempat();
