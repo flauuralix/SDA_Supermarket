@@ -94,7 +94,7 @@ void Ins_Akhir_Antrian (address_A *p, address_A PNew){	// check
 }
 
 
-void Del_Awal_Antrian (address_A * p, infochar * X){	// check
+void Delete_Awal_Antrian (address_A * p, infochar * X){	// check
 	
 	address_A A;
 	
