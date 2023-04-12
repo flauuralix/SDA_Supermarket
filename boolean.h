@@ -1,7 +1,7 @@
 /*       
 File Name		: boolean.h
 Description		: Tubes Struktur Data dan Algoritma
-Author			: 
+Author			: Athalie
 */
 
 /* ========== Header File ========== */
