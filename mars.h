@@ -63,8 +63,39 @@ void Ins_Akhir_Antrian (address_A *p, address_A PNew);
 /* FS : menyambungkan elemen baru (PNew) di akhir Linked List */
 
 void Del_Awal_Antrian (address_A * p, infochar * X);
-/* IS : P TIDAK Kosong */
-/* FS : Elemen pertama List dihapus, nilai info disimpan ke X */
-/* dan alamat elemen pertama di dealokasi */
+/* IS : P TIDAK Kosong 
+	FS : Elemen pertama List dihapus, nilai info disimpan ke X
+	dan alamat elemen pertama di dealokasi */
+
+
+//list antrian
+
+boolean isEmpty_Antrian(address_A p);
+/*Fungsi ini menerima parameter berupa pointer ke
+alamat awal (head) antrian dan akan mengembalikan nilai
+boolean true jika antrian kosong atau false jika antrian tidak kosong.*/
+
+void Create_Node_Antrian (address_A *p);
+/*Fungsi ini akan membuat sebuah node baru untuk elemen antrian dan
+mengembalikan pointer ke node tersebut melalui parameter "p". */
+
+void Isi_Node_Antrian (address_A *p , infochar nama);
+/*Fungsi ini akan mengisi node yang ditunjuk oleh pointer "p" dengan data "nama".*/
+
+void Tampil_Antrian (address_A p);
+/*Fungsi ini akan menampilkan semua elemen dalam antrian
+yang diawali oleh node yang ditunjuk oleh pointer "p".*/
+
+void Ins_Akhir_Antrian (address_A *p, address_A PNew);
+/*Fungsi ini akan memasukkan sebuah node baru ("PNew") ke dalam antrian
+pada posisi akhir. Pointer "p" akan menunjuk ke alamat awal (head) antrian.*/
+
+void Del_Awal_Antrian (address_A * p, infochar * X);
+/*Fungsi ini akan menghapus elemen pertama dalam antrian yang diawali 
+oleh node yang ditunjuk oleh pointer p dan menyimpan data dari elemen
+tersebut ke dalam variabel X. Pointer p akan menunjuk ke alamat awal (head) antrian.*/
+
+
+
 
 #endif

@@ -26,6 +26,7 @@ void header()
 // List Antrian
 
 datakasir Kasir[4];
+address_A Antrian;
 
 boolean isEmpty_Antrian(address_A p){	// check
 	
