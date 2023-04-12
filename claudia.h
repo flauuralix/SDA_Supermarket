@@ -14,32 +14,11 @@ typedef struct addressNode{
 typedef struct tElmtListdata *addressdt;
 typedef struct tElmtListdata {
 	 infotype nm;
-	 address  br;
+	 addressdt  br;
 } ElmtListdata;
-//tampilan nama supermarket marcau
-void header ();
+
 
 //tampilan kasir 
 void tampilanmenu();
 void pilihMenu(int *pilihan);
 void tempat();
-//tampilan menu utama
-void menu ();
-
-// prosedur pelanggan
-void pelanggan (address *First);
-
-//prosedur transaksi
-void transaksi (address *First, address *Last);
-
-//prosedur pilih kasir
-void pilih_kasir (address *First, address *Last);
-
-//prosedur dan tampilan history transaksi
-void history (address *First, address *Last);
-
-//prosedur exit 
-void exit (address *First, address *Last);
-
-
-
