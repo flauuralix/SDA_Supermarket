@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "claudia.h"
 
 //header tampilan
 void header()
@@ -22,10 +23,9 @@ void header()
 }
 
 
-
 // List Antrian
 
-datakasir Kasir[4];
+//datakasir Kasir[4];
 address_A Antrian;
 
 boolean isEmpty_Antrian(address_A p){	// check
@@ -138,12 +138,5 @@ void Kasir_Antrian()
 	printf ("\t-----------------------------------------------------------------------------------------------------------------------------------\n");
 }
 
-	
-
-/*int main()
-{
-	//header();
-	Kasir_Antrian();
-}*/
 
 
