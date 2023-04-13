@@ -1,6 +1,6 @@
 [Project]
-filename=TUBES_SDA.dev
-name=TUBES_SDA
+FileName=EditAntri_Kasir.dev
+Name=MARCAU
 Type=1
 Ver=2
 ObjFiles=
@@ -19,7 +19,7 @@ ObjectOutput=
 LogOutput=
 LogOutputEnabled=0
 OverrideOutput=0
-OverrideOutputName=
+OverrideOutputName=EditAntri_Kasir.exe
 HostApplication=
 UseCustomMakefile=0
 CustomMakefile=
@@ -27,9 +27,9 @@ CommandLine=
 Folders=
 IncludeVersionInfo=0
 SupportXPThemes=0
-CompilerSet=3
-CompilerSettings=0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;4;0;0;0
-UnitCount=5
+CompilerSet=0
+CompilerSettings=0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+UnitCount=6
 
 [VersionInfo]
 Major=1
@@ -39,19 +39,19 @@ Build=0
 LanguageID=1033
 CharsetID=1252
 CompanyName=
-FileVersion=
+FileVersion=1.0.0.0
 FileDescription=Developed using the Dev-C++ IDE
 InternalName=
 LegalCopyright=
 LegalTrademarks=
 OriginalFilename=
 ProductName=
-ProductVersion=
+ProductVersion=1.0.0.0
 AutoIncBuildNr=0
 SyncProduct=1
 
 [Unit1]
-FileName=boolean.h
+FileName=main.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -61,17 +61,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit2]
-FileName=main.c
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit3]
-FileName=claudia.c
+FileName=boolean.h
 CompileCpp=1
 Folder=
 Compile=1
@@ -81,7 +71,47 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit4]
-FileName=claudia.h
+FileName=claudia.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit6]
+FileName=mars.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit8]
+FileName=mars.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit7]
+FileName=mars.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit3]
+FileName=header.h
 CompileCpp=1
 Folder=
 Compile=1
@@ -91,7 +121,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit5]
-FileName=mars.cpp
+FileName=athalie.cpp
 CompileCpp=1
 Folder=
 Compile=1

@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "claudia.h"
+#include "header.h"
+
 
 //header tampilan
 void header()
@@ -22,11 +23,67 @@ void header()
 	printf("\t\t+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
 }
 
+//tampilan kasir
+/*
+void Kasir_Antrian()
+{
+	printf ("\t___________________________________________________________________________________________________________________________________\n");
+	printf ("\t|             |\n");
+	printf ("\t|   Kasir 1   |"); Tampil_List_Antrian(Kasir[0].next);
+	printf ("\t|             |\n");
+	printf ("\t|----------------------------------------------------------------------------------------------------------------------------------\n");
+	printf ("\t|             |\n");
+	printf ("\t|   Kasir 2   |"); Tampil_List_Antrian(Kasir[1].next);
+	printf ("\t|             |\n");
+	printf ("\t|----------------------------------------------------------------------------------------------------------------------------------\n");
+	printf ("\t|             |\n");
+	printf ("\t|   Kasir 3   |"); Tampil_Antrian(Kasir[2].next);
+	printf ("\t|             |\n");
+	printf ("\t|----------------------------------------------------------------------------------------------------------------------------------\n");
+	printf ("\t|             |\n");
+	printf ("\t|   Kasir 4   |"); Tampil_Antrian(Kasir[3].next);
+	printf ("\t|             |\n");
+	printf ("\t|----------------------------------------------------------------------------------------------------------------------------------\n");
+	printf ("\t|             |\n");
+	printf ("\t|   Kasir 5   |"); Tampil_Antrian(Kasir[4].next);
+	printf ("\t|             |\n");
+	printf ("\t-----------------------------------------------------------------------------------------------------------------------------------\n");
+} */
+
 
 // List Antrian
 
-//datakasir Kasir[4];
-address_A Antrian;
+
+//void CreateEmpty_Antrian(Queue_A *Q){	// gakepake
+//	
+//	*Q = NULL;
+//	
+//}
+
+//boolean IsEmpty_Antrian(Queue_A Q){	// gakepake
+//	
+//	return(isEmpty_Antrian(Q));
+//	
+//}
+
+//void Enqueue_Antrian(Queue_A *Q,infochar X,infotype Z){	// gakepake
+//	
+//	address_A a = NULL;
+//	
+//	Create_Node_Antrian(&a);
+//	Isi_Node_Antrian(&a, X);
+//	Ins_Akhir_Antrian(&(*Q),a);
+//	
+//}
+
+void Dequeue_Antrian(Queue_A *Q,infochar *X){	// check
+	
+	Del_Awal_Antrian(&(*Q),&(*X));
+	
+}
+
+
+// List Antrian
 
 boolean isEmpty_Antrian(address_A p){	// check
 	
@@ -41,7 +98,7 @@ boolean isEmpty_Antrian(address_A p){	// check
 void Create_Node_Antrian (address_A *p){	// check
 	
 	*p = (address_A)malloc(sizeof(List_Antrian));
-	//	if(p != Nil){
+//	if(p != Nil){
 //		printf("Alokasi Berhasil dengan Alamat : %p.\n",*p);
 //	}else{
 //		printf("Gagal Alokasi\n");
@@ -60,7 +117,7 @@ void Isi_Node_Antrian (address_A *p , infochar nama){	// check
 	
 }
 
-void Tampil_Antrian (address_A p){		// check
+void Tampil_List_Antrian (address_A p){		// check
 	int i = 1;
 	if(isEmpty_Antrian(p)){
 		printf("List Kosong\n");
@@ -94,7 +151,7 @@ void Ins_Akhir_Antrian (address_A *p, address_A PNew){	// check
 }
 
 
-void Delete_Awal_Antrian (address_A * p, infochar * X){	// check
+void Del_Awal_Antrian (address_A * p, infochar * X){	// check
 	
 	address_A A;
 	
@@ -109,34 +166,5 @@ void Delete_Awal_Antrian (address_A * p, infochar * X){	// check
 	}
 	
 }
-
-	
-
-//tampilan kasir
-void Kasir_Antrian()
-{
-	printf ("\t___________________________________________________________________________________________________________________________________\n");
-	printf ("\t|             |\n");
-	printf ("\t|   Kasir 1   |"); Tampil_Antrian(Kasir[0].next);
-	printf ("\t|             |\n");
-	printf ("\t|----------------------------------------------------------------------------------------------------------------------------------\n");
-	printf ("\t|             |\n");
-	printf ("\t|   Kasir 2   |"); Tampil_Antrian(Kasir[1].next);
-	printf ("\t|             |\n");
-	printf ("\t|----------------------------------------------------------------------------------------------------------------------------------\n");
-	printf ("\t|             |\n");
-	printf ("\t|   Kasir 3   |"); Tampil_Antrian(Kasir[2].next);
-	printf ("\t|             |\n");
-	printf ("\t|----------------------------------------------------------------------------------------------------------------------------------\n");
-	printf ("\t|             |\n");
-	printf ("\t|   Kasir 4   |"); Tampil_Antrian(Kasir[3].next);
-	printf ("\t|             |\n");
-	printf ("\t|----------------------------------------------------------------------------------------------------------------------------------\n");
-	printf ("\t|             |\n");
-	printf ("\t|   Kasir 5   |"); Tampil_Antrian(Kasir[4].next);
-	printf ("\t|             |\n");
-	printf ("\t-----------------------------------------------------------------------------------------------------------------------------------\n");
-}
-
 
 
