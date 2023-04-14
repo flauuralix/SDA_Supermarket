@@ -183,4 +183,7 @@ void Del_Awal_Antrian (address_A * p, infochar * X);
 /* IS : P TIDAK Kosong */
 /* FS : Elemen pertama List dihapus, nilai info disimpan ke X */
 /* dan alamat elemen pertama di dealokasi */
+void tampilan_kasir();
+void tempat(int *index);
+
 #endif

@@ -90,6 +90,46 @@ void Ins_Akhir_Pembeli (address_P *p, address_P PNew){ // check
 	}
 }
 
+void tampilan_kasir(){
+	    printf("\t|-----------------------------|");
+       	printf("\n\t|\t     MENU             |");    
+       	 printf("\n\t|-----------------------------|");
+		printf(" \n\t|     1.  PELANGGAN           |\n");
+		 printf("\t|-----------------------------|");
+		printf(" \n\t|     2. PROSES KASIR         |\n");
+		printf("\t|-----------------------------|");
+		printf("\n\t|     3. PEMABAYARAN          |\n");
+		printf("\t|-----------------------------|");
+		printf(" \n\t|     4.   HISTORY            |\n");
+		printf("\t|-----------------------------|");
+		printf(" \n\t|     5.     EXIT             |\n");
+		printf("\t|-----------------------------|");
+	}
 
+void tempat(int *index){
+		printf   ("\t\t  +======================================+ \n");
+	printf   ("\t\t  |  SILAHKAN MEMILIH TEMPAT BELANJA     | \n");
+	printf   ("\t\t  |--------------------------------------| \n");
+	printf   ("\t\t  |          1. KERANJANG                | \n");
+	printf   ("\t\t  |          2. TROLI                    | \n");
+    printf   ("\t\t  |--------------------------------------| \n");
+    printf("\t\t\t Masukkan pilihan:");
+   
+    int pil;
+    scanf("%d", &pil);
+   
+    while (pil!=1&& pil!=2) {
+        printf ("Pilihan Anda tidak ada, ketik ulang: ");
+        scanf("%d",&pil);
+    }
+    switch (pil) {
+        case 1:
+            printf("\t\t ---ANDA MEMILIH KERAJANG---\n");
+            break;
+        case 2:
+            printf("\t\t ---ANDA MEMILIH TROLI---\n");
+            break;
+    }
+}
 
 //====================================

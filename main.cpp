@@ -58,12 +58,13 @@ int main(){
 		printf("Kasir 3:\n");
 		Tampil_List_Antrian(Kasir[2].next);
 		printf("\n");
+//		tampilan_kasir();		
 		printf("Toko Negatif Corona : \n");
 		printf(" 1. Persediaan Stok Barang \n");
 		printf(" 2. Beli Barang \n");
 		printf(" 3. Proses Antrian \n");
 		printf(" 4. Tutup Toko \n");
-		printf("Pilihan : "); 
+		printf("\nPilihan : "); 
 		scanf("%d", &pil);
 		system("cls");
 		switch(pil)
@@ -75,13 +76,16 @@ int main(){
 			}
 			case 2 :{
 				lagi = 1;
-				printf("Isi Nama Pembeli : ");
+//			    printf("--SElAMAT DATANG DI SUPERMAERKET MARCAU--");
+				printf("\n\tNAMA PELANGGAN: ");
 				scanf("%s",&nama);
 				Enqueue_Pembeli(&Head_Pembeli,&Head_BarangBelian,nama,nokasir);
 				Pembeli = Head_Pembeli;
 				while(Pembeli->next != NULL){ 
 					Pembeli = Pembeli->next;	
 				}
+				int index;
+//				tempat(&index);
 				list_barang();
 				while (lagi == 1){
 					printf("\nPilih Barang: ");
