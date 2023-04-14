@@ -6,51 +6,43 @@ Author			: Athalie Aurora, Claudia Berlian H, Marshya Nurrizatuzzahra
 
 /* ========== Header File ========== */
 
+
 #include <stdio.h>
 #include "header.h"
 
 
-
-/* ======= End of Header File ====== */
-
-
-
-//==================================== List Pelanggan
-
-//void CreateEmpty_Pembeli(Queue_P *Q){	// gakepake
+//void CreateEmpty_BarangBelian(Queue_BB *Q){	// gakepake
 //	
 //	*Q = NULL;
 //	
 //}
 
-//boolean IsEmpty_Pembeli(Queue_P Q){	// gakepake
-//	
-//	return(isEmpty_Pembeli(Q));
+//boolean IsEmpty_BarangBelian(Queue_BB Q){		// gakepake
+//		
+//	return(isEmpty_BarangBelian(Q));
 //	
 //}
 
-void Enqueue_Pembeli(Queue_P *Q, Queue_BB *P, infochar Y, infotype Z){ // check
+void Enqueue_BarangBelian(Queue_BB *Q,infotype X, infochar Y, infotype Z){	// check
 	
-	address_P a = NULL;
-	address_BB b = NULL;
+	address_BB a = NULL;
 	
-	Create_Node_Pembeli(&a);
-	Create_Node_BarangBelian(&b);
-	Isi_Node_Pembeli(&a, &b, Y, Z);
-	Ins_Akhir_Pembeli(&(*Q),a);
+	Create_Node_BarangBelian(&a);
+	Isi_Node_BarangBelian(&a, X, Y, Z);
+	Ins_Akhir_BarangBelian(&(*Q),a);
 	
 }
 
-//void Dequeue_Pembeli(Queue_P *Q,infochar *X){
+//void Dequeue_BarangBelian(Queue_BB *Q,infochar *X){	// gakepake
 //	
-//	Del_Awal_Pembeli(&(*Q),&(*X));
+//	Del_Awal_BarangBelian(&(*Q),&(*X));
 //	
 //}
 
 
-// List Pelanggan
+// List BarangBelian
 
-boolean isEmpty_Pembeli(address_P p){ // check
+boolean isEmpty_BarangBelian(address_BB p){  // check
 	
 	if(p == NULL){
 		return 1;
@@ -60,38 +52,33 @@ boolean isEmpty_Pembeli(address_P p){ // check
 	
 }
 
-void Create_Node_Pembeli (address_P *p){	// check
+void Create_Node_BarangBelian (address_BB *p){	// check
 	
-	*p = (address_P)malloc(sizeof(List_Pembeli));
-/*	if(p != Nil){
-		printf("Alokasi Berhasil dengan Alamat : %p.\n",*p);
-	}else{
-		printf("Gagal Alokasi\n");
-	}*/
+	*p = (address_BB)malloc(sizeof(List_BarangBelian));
 	
 }
 
-void Isi_Node_Pembeli (address_P *p , address_BB *q, infochar Nama_Pembeli, infotype No_Kasir){ // check
+void Isi_Node_BarangBelian (address_BB *p , infotype harga, infochar nama_barang, infotype jumlah_barang){	// check
 	
-	if(isEmpty_Pembeli(*p)){
+	if(isEmpty_BarangBelian(*p)){
 		printf("Node Belum di Alokasi\n");
 	}else{
 		next(*p) = Nil;
-		BarangBelian(*p) = *q;
-		Nama_Pembeli(*p) = Nama_Pembeli;
-		No_Kasir(*p) = No_Kasir;
+		Harga(*p) = harga;
+		Nama_Barang(*p) = nama_barang;
+		Jumlah_Barang(*p) = jumlah_barang;
 	}
 	
 }
 
-void Ins_Akhir_Pembeli (address_P *p, address_P PNew){ // check
+void Ins_Akhir_BarangBelian (address_BB *p, address_BB PNew){	// check
 	
-	address_P A;
-	if(isEmpty_Pembeli(*p)){
+	address_BB A;
+	if(isEmpty_BarangBelian(*p)){
 		*p = PNew;
 	}else{	
 		A = *p;
-		while(!isEmpty_Pembeli(next(A))){
+		while(!isEmpty_BarangBelian(next(A))){
 			A = next(A);
 		}
 		next(A) = PNew;
@@ -99,8 +86,18 @@ void Ins_Akhir_Pembeli (address_P *p, address_P PNew){ // check
 }
 
 
-
-//====================================
-
-
+void Del_Awal_BarangBelian (address_BB * p, infochar * X){	// check
+	
+	address_BB A;
+	
+	if(isEmpty_BarangBelian(*p)){
+		printf("List Kosong");
+	}else{
+		A = *p;
+		*X = Nama_Barang(A);
+		*p = next(*p);
+		A = NULL;
+		free(A);
+	}
+}
 
