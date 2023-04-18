@@ -62,23 +62,19 @@ int main(){
 		printf ("\t|             |");
 		printf ("\n\t-----------------------------------------------------------------------------------------------------------------------------------");
 		printf ("\n\t|             |");
-		printf ("\n\t|   Kasir 2   |");
-		Tampil_List_Antrian(Kasir[1].next);
+		printf ("\n\t|   Kasir 2   |"); Tampil_List_Antrian(Kasir[1].next);
 		printf ("\t|             |");
 		printf ("\n\t-----------------------------------------------------------------------------------------------------------------------------------");
 		printf ("\n\t|             |");	
-		printf ("\n\t|   Kasir 3   |");
-		Tampil_List_Antrian(Kasir[2].next);
+		printf ("\n\t|   Kasir 3   |"); Tampil_List_Antrian(Kasir[2].next);
 		printf ("\t|             |");
 		printf ("\n\t-----------------------------------------------------------------------------------------------------------------------------------");
 		printf ("\n\t|             |");
-		printf ("\n\t|   Kasir 4   |");
-		Tampil_List_Antrian(Kasir[3].next);
+		printf ("\n\t|   Kasir 4   |"); Tampil_List_Antrian(Kasir[3].next);
 		printf ("\t|             |");
 		printf ("\n\t-----------------------------------------------------------------------------------------------------------------------------------");	
 		printf ("\n\t|             |");	
-		printf ("\n\t|   Kasir 5   |");
-		Tampil_List_Antrian(Kasir[4].next);
+		printf ("\n\t|   Kasir 5   |"); Tampil_List_Antrian(Kasir[4].next);
 		printf ("\t|             |");
 		printf ("\n\t-----------------------------------------------------------------------------------------------------------------------------------\n");
 		printf("\n");
@@ -137,6 +133,8 @@ int main(){
 				int item;
 			printf("Apakah anda ingin menambahkan atau mengurangi Item? \n1.Ya\n2.Tidak\nInput Pilihan:");
 			scanf("%d",&item);
+			switch(item){
+			 case 1:
 			    printf("Pilih Kasir(1-5): ");
 				scanf("%d",&i);
 				Dequeue_Antrian(&Kasir[i-1].next,&nama);
@@ -183,11 +181,25 @@ int main(){
 				Ins_Akhir_Antrian(&Kasir[nokasir-1].next,Antrian);
 				printf("\nAnda Sudah Masuk Antrian\n");
 				break;
-			
-			case 4 :{
-				
+				case 2:
+					main();
+					break;
+				}
 				break;
-			}
+			
+			case 4 :
+				printf("\t\t\t\t   ___________History Transaksi___________\n");
+				printf("\n");
+				printf("------------------------------------------------------\n");
+				printf("Nama Pelanggan : %s\n", &nama);
+				printf("Kasir :\n");
+				printf("______Nama Barang_____   __Jumlah__   ____Harga____\n");
+				printf("___________________________________________________\n");
+				printf("Total                     jml brg        jml hrg   \n");
+				printf("------------------------------------------------------\n");
+				system("pause");
+				break;
+			
 			case 5 :
 				printf("Pilih Kasir(1-5): ");
 				scanf("%d",&i);
@@ -200,9 +212,10 @@ int main(){
 				printf("Pilihan Tidak Tersedia\n");
 				system("pause");
 				break;
-			}
-	    }
 		}
+	    }
+	}
+		
 	
 
 
