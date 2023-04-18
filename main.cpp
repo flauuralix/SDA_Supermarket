@@ -14,7 +14,7 @@ Author			: Athalie Aurora, Claudia Berlian H, Marshya Nurrizatuzzahra
 /* ======= End of Header File ====== */
 
 
-datakasir Kasir[3];
+datakasir Kasir[5];
 DataBarang list[5];
 
 address_P Head_Pembeli = NULL;
@@ -42,6 +42,8 @@ int main(){
 	Kasir[0].Nomor = 1; 
 	Kasir[1].Nomor = 2;
 	Kasir[2].Nomor = 3;
+	Kasir[3].Nomor = 4;
+	Kasir[4].Nomor = 5;
 	
 	list[0].nama = "Daging Ayam	",list[0].stok = 10,list[0].harga = 25000;
 	list[1].nama = "Daging Sapi	",list[1].stok = 10,list[1].harga = 40000;
@@ -51,15 +53,39 @@ int main(){
 	for(;;){
 		system ("cls");
 		printf("Daftar Antrian: \n");
-		printf("Kasir 1:\n");
+		void Kasir_Antrian();
+		printf ("\t___________________________________________________________________________________________________________________________________\n");
+		printf ("\t|             |\n");
+		printf ("\t|   Kasir 1   |");
+	//	printf("Kasir 1:\n");
 		Tampil_List_Antrian(Kasir[0].next);
-		printf("Kasir 2:\n");
+		printf ("\t|             |\n");
+		printf ("\t-----------------------------------------------------------------------------------------------------------------------------------\n");
+		printf ("\t|             |\n");
+		printf ("\t|   Kasir 2   |");
+	//	printf("Kasir 2:\n");
 		Tampil_List_Antrian(Kasir[1].next);
-		printf("Kasir 3:\n");
+		printf ("\t|             |\n");
+		printf ("\t-----------------------------------------------------------------------------------------------------------------------------------\n");
+		printf ("\t|             |\n");	
+		printf ("\t|   Kasir 3   |");
+	//	printf("Kasir 3:\n");
 		Tampil_List_Antrian(Kasir[2].next);
+		printf ("\t|             |\n");
+		printf ("\t-----------------------------------------------------------------------------------------------------------------------------------\n");
+		printf ("\t|             |\n");
+		printf ("\t|   Kasir 4   |");
+		Tampil_List_Antrian(Kasir[3].next);
+		printf ("\t|             |\n");
+		printf ("\t-----------------------------------------------------------------------------------------------------------------------------------\n");	
+		printf ("\t|             |\n");	
+		printf ("\t|   Kasir 5   |");
+		Tampil_List_Antrian(Kasir[4].next);
+		printf ("\t|             |\n");
+		printf ("\t-----------------------------------------------------------------------------------------------------------------------------------\n");
 		printf("\n");
 //		tampilan_kasir();		
-		printf("Toko Negatif Corona : \n");
+	//	printf("Toko Negatif Corona : \n");
 		printf(" 1. Persediaan Stok Barang \n");
 		printf(" 2. Beli Barang \n");
 		printf(" 3. Proses Antrian \n");
