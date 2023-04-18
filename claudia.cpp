@@ -66,7 +66,7 @@ void Create_Node_Pembeli (address_P *p){	// check
 void Isi_Node_Pembeli (address_P *p , address_BB *q, infochar Nama_Pembeli, infotype No_Kasir){ // check
 	
 	if(isEmpty_Pembeli(*p)){
-		printf("Node Belum di Alokasi\n");
+		printf("Node Belum di Alokasi");
 	}else{
 		next(*p) = Nil;
 		BarangBelian(*p) = *q;

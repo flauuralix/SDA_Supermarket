@@ -185,5 +185,6 @@ void Del_Awal_Antrian (address_A * p, infochar * X);
 /* dan alamat elemen pertama di dealokasi */
 void tampilan_kasir();
 void tempat(int *index);
+void header();
 
 #endif

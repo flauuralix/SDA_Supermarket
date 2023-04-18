@@ -107,7 +107,7 @@ void Tampil_List_Antrian (address_A p){		// check
 			printf("%d. %s",i,&p->nama);
 			p = next(p);
 			if(p != Nil){
-				printf("\n");
+				printf("\t");
 			}
 		i++;	
 		}
