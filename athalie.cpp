@@ -101,3 +101,37 @@ void Del_Awal_BarangBelian (address_BB * p, infochar * X){	// check
 	}
 }
 
+
+//====== Untuk history coba
+
+
+void addHistoryBelian(Queue_BB *Q, infotype harga, infochar nama_barang, infotype jumlah_barang){
+address_BB a = NULL;
+Create_Node_BarangBelian(&a);
+Isi_Node_BarangBelian(&a, harga, nama_barang, jumlah_barang);
+Ins_Akhir_BarangBelian(&(*Q), a);
+}
+
+void printHistoryBelian(Queue_BB Q){
+address_BB a = Q;
+if(isEmpty_BarangBelian(Q)){
+	printf("List Kosong\n");
+}else{
+	printf("=============================================================\n");
+	printf("| %-20s | %-10s | %-10s |\n", "Nama Barang", "Harga", "Jumlah");
+	printf("=============================================================\n");
+	
+	while(a != NULL){
+		printf("| %-20s | %-10d | %-10d |\n", Nama_Barang(a), Harga(a), Jumlah_Barang(a));
+		a = next(a);
+	}
+	
+	printf("=============================================================\n");
+}
+}
+
+
+void deleteHistoryBelian(Queue_BB *Q){
+infochar X;
+Del_Awal_BarangBelian(&(*Q), &X);
+}
