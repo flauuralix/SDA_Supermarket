@@ -67,6 +67,8 @@ typedef address_A Queue_A;
 
 void Kasir_Antrian();
 
+
+
 // ============================================================= List Pelanggan
 
 //// void CreateEmpty_Pembeli(Queue_P *Q);
@@ -78,32 +80,7 @@ void Enqueue_Pembeli(Queue_P *Q, Queue_BB *K, infochar Y, infotype Z);
 //// void Dequeue_Pembeli(Queue_P *Q,infochar *X);
 
 
-//============================================================= List BarangBelian
-
-//// void CreateEmpty_BarangBelian(Queue_BB *Q);
-
-//// boolean IsEmpty_BarangBelian(Queue_BB Q);
-
-void Enqueue_BarangBelian(Queue_BB *Q,infotype X, infochar Y, infotype Z);
-
-//// void Dequeue_BarangBelian(Queue_BB *Q,infochar *X);
-
-// ============================================================== List Antrian
-
-//// void CreateEmpty_Antrian(Queue_A *Q);
-
-//// boolean IsEmpty_Antrian(Queue_A Q);
-
-//// void Enqueue_Antrian(Queue_A *Q,infochar X,infotype Z);
-
-void Dequeue_Antrian(Queue_A *Q,infochar *X);
-
-
-
-
-
-
-// ============================================================= List Pelanggan
+//--
 
 boolean isEmpty_Pembeli(address_P p);
 // Tujuan : memeriksa apakah linked masih kosong
@@ -128,6 +105,16 @@ void Ins_Akhir_Pembeli (address_P *p, address_P PNew);
 /* FS : menyambungkan elemen baru (PNew) di akhir Linked List */
 
 // ============================================================= Barang Belian
+
+//// void CreateEmpty_BarangBelian(Queue_BB *Q);
+
+//// boolean IsEmpty_BarangBelian(Queue_BB Q);
+
+void Enqueue_BarangBelian(Queue_BB *Q,infotype X, infochar Y, infotype Z);
+
+//// void Dequeue_BarangBelian(Queue_BB *Q,infochar *X);
+
+//--
 
 boolean isEmpty_BarangBelian(address_BB p);
 // Tujuan : memeriksa apakah linked masih kosong
@@ -156,6 +143,17 @@ void Del_Akhir_BarangBelian (address_BB * p, infotype * X, infochar * Y);
 /* dan alamat elemen terakhir di dealokasi */
 
 // ============================================================= List Antrian
+
+//// void CreateEmpty_Antrian(Queue_A *Q);
+
+//// boolean IsEmpty_Antrian(Queue_A Q);
+
+//// void Enqueue_Antrian(Queue_A *Q,infochar X,infotype Z);
+
+void Dequeue_Antrian(Queue_A *Q,infochar *X);
+
+
+//--
 
 boolean isEmpty_Antrian(address_A p);
 // Tujuan : memeriksa apakah linked masih kosong
