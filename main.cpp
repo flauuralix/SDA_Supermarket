@@ -8,7 +8,7 @@ Author			: Athalie Aurora, Claudia Berlian H, Marshya Nurrizatuzzahra
 
 #include <stdio.h>
 #include "header.h"
-#include "antri.h"
+
 
 
 /* ======= End of Header File ====== */
@@ -62,23 +62,19 @@ int main(){
 		printf ("\t|             |");
 		printf ("\n\t-----------------------------------------------------------------------------------------------------------------------------------");
 		printf ("\n\t|             |");
-		printf ("\n\t|   Kasir 2   |");
-		Tampil_List_Antrian(Kasir[1].next);
+		printf ("\n\t|   Kasir 2   |"); Tampil_List_Antrian(Kasir[1].next);
 		printf ("\t|             |");
 		printf ("\n\t-----------------------------------------------------------------------------------------------------------------------------------");
 		printf ("\n\t|             |");	
-		printf ("\n\t|   Kasir 3   |");
-		Tampil_List_Antrian(Kasir[2].next);
+		printf ("\n\t|   Kasir 3   |"); Tampil_List_Antrian(Kasir[2].next);
 		printf ("\t|             |");
 		printf ("\n\t-----------------------------------------------------------------------------------------------------------------------------------");
 		printf ("\n\t|             |");
-		printf ("\n\t|   Kasir 4   |");
-		Tampil_List_Antrian(Kasir[3].next);
+		printf ("\n\t|   Kasir 4   |"); Tampil_List_Antrian(Kasir[3].next);
 		printf ("\t|             |");
 		printf ("\n\t-----------------------------------------------------------------------------------------------------------------------------------");	
 		printf ("\n\t|             |");	
-		printf ("\n\t|   Kasir 5   |");
-		Tampil_List_Antrian(Kasir[4].next);
+		printf ("\n\t|   Kasir 5   |"); Tampil_List_Antrian(Kasir[4].next);
 		printf ("\t|             |");
 		printf ("\n\t-----------------------------------------------------------------------------------------------------------------------------------\n");
 		printf("\n");
@@ -146,8 +142,8 @@ int main(){
 				int item;
 			printf("Apakah anda ingin menambahkan atau mengurangi Item? \n1.Ya\n2.Tidak\nInput Pilihan:");
 			scanf("%d",&item);
-			    switch(item){
-				case 1:
+			switch(item){
+			 case 1:
 			    printf("Anda di kasir berapa(1-5)?: ");
 				scanf("%d",&i);
 				Dequeue_Antrian(&Kasir[i-1].next,&nama);
@@ -198,23 +194,28 @@ int main(){
 				break;
 				case 2:
 					main();
+
 			}
 			
 				break;
 			
+			
 			case 4 :
-				
-  
-		       	printf("\nNama: %s ",&nama);
-				printf("\nno kasir: ");
-				printf("\nJumlah barang: \n");
-			    printf("pilihan:  %s \n",&pilih);
-			   
+				printf("\t\t\t\t   ___________History Transaksi___________\n");
+				printf("\n");
+				printf("------------------------------------------------------\n");
+				printf("Nama Pelanggan : %s\n", &nama);
+				printf("Kasir :\n");
+				printf("pilihan:  %s \n",&pilih);
+				printf("______Nama Barang_____   __Jumlah__   ____Harga____\n");
+				printf("___________________________________________________\n");
+				printf("Total                     jml brg        jml hrg   \n");
+				printf("------------------------------------------------------\n");
 				system("pause");
-				
 				break;
 			
-			case 5  :
+			case 5 :
+
 				printf("Pilih Kasir(1-5): ");
 				scanf("%d",&i);
 				Dequeue_Antrian(&Kasir[i-1].next,&nama);
@@ -226,9 +227,15 @@ int main(){
 				printf("Pilihan Tidak Tersedia\n");
 				system("pause");
 				break;
+
 	    	}
 	    }
 	}
+
+
+	
+		
+
 	
 
 
