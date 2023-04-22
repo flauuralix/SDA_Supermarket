@@ -37,6 +37,7 @@ address_BB BarangBelian;
 infochar Nama_Pembeli;
 infotype No_Kasir;
 address_P next;
+
 } List_Pembeli;
 typedef struct List_Barang{
 infochar nama;
@@ -184,7 +185,7 @@ void Del_Awal_Antrian (address_A * p, infochar * X);
 /* FS : Elemen pertama List dihapus, nilai info disimpan ke X */
 /* dan alamat elemen pertama di dealokasi */
 void tampilan_kasir();
-void tempat(int *index);
 void header();
+
 
 #endif

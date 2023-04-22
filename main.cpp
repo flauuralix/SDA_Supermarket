@@ -26,7 +26,7 @@ address_BB BarangBelian;
 address_A Antrian;
 	
 infotype pil,kode,jml,nokasir,harga,lagi,Nomor,i=0;
-infochar nama,riwayat,Nama_Barang;
+infochar nama,riwayat,Nama_Barang,pilih;
 
 void list_barang(){
 	int i;
@@ -98,8 +98,17 @@ int main(){
 				while(Pembeli->next != NULL){ 
 					Pembeli = Pembeli->next;	
 				}
-				int index;
-				tempat(&index);
+			
+  	printf   ("\t\t  +======================================+ \n");
+	printf   ("\t\t  |   TEMPAT BELANJA YANG TERSEDIA       | \n");
+	printf   ("\t\t  |--------------------------------------| \n");
+	printf   ("\t\t  |           - KERANJANG                | \n");
+	printf   ("\t\t  |           - TROLI                    | \n");
+    printf   ("\t\t  |--------------------------------------| \n");
+    printf("\t\t Silahkan ketik pilihan anda:");
+    scanf("%s",&pilih);
+
+
 				list_barang();
 				while (lagi == 1){
 					printf("\nPilih Barang: ");
@@ -137,17 +146,20 @@ int main(){
 				int item;
 			printf("Apakah anda ingin menambahkan atau mengurangi Item? \n1.Ya\n2.Tidak\nInput Pilihan:");
 			scanf("%d",&item);
-			    printf("Pilih Kasir(1-5): ");
+			    switch(item){
+				case 1:
+			    printf("Anda di kasir berapa(1-5)?: ");
 				scanf("%d",&i);
 				Dequeue_Antrian(&Kasir[i-1].next,&nama);
 				system("pause");
-				printf("Nama %s telah dihapus dari antrian\n",&nama);
+				printf("Nama %s telah dikeluar dari antrian silahkan antri kembali\n",&nama);
 			   	lagi = 1;
 				Enqueue_Pembeli(&Head_Pembeli,&Head_BarangBelian,nama,nokasir);
 				Pembeli = Head_Pembeli;
 				while(Pembeli->next != NULL){ 
 					Pembeli = Pembeli->next;	
 				}
+				
 				list_barang();
 				while (lagi == 1){
 					printf("\nPilih Barang: ");
@@ -156,6 +168,7 @@ int main(){
 					scanf("%d",&jml);
 					Nama_Barang = list[kode-1].nama;
 					harga = list[kode-1].harga * jml;
+					
 					list[kode-1].stok = list[kode-1].stok-jml;
 				if(list[kode-1].stok<0){
 					printf("Maaf Barang Habis\n");
@@ -183,12 +196,25 @@ int main(){
 				Ins_Akhir_Antrian(&Kasir[nokasir-1].next,Antrian);
 				printf("\nAnda Sudah Masuk Antrian\n");
 				break;
+				case 2:
+					main();
+			}
 			
-			case 4 :{
+				break;
+			
+			case 4 :
+				
+  
+		       	printf("\nNama: %s ",&nama);
+				printf("\nno kasir: ");
+				printf("\nJumlah barang: \n");
+			    printf("pilihan:  %s \n",&pilih);
+			   
+				system("pause");
 				
 				break;
-			}
-			case 5 :
+			
+			case 5  :
 				printf("Pilih Kasir(1-5): ");
 				scanf("%d",&i);
 				Dequeue_Antrian(&Kasir[i-1].next,&nama);
@@ -200,9 +226,9 @@ int main(){
 				printf("Pilihan Tidak Tersedia\n");
 				system("pause");
 				break;
-			}
+	    	}
 	    }
-		}
+	}
 	
 
 
