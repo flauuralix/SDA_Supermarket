@@ -41,7 +41,6 @@ address_P next;
 } List_Pembeli;
 typedef struct List_Barang{
 infochar nama;
-infotype stok;
 infotype harga; 	
 }DataBarang;
 typedef struct List_BarangBelian {

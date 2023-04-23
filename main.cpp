@@ -32,8 +32,18 @@ void list_barang(){
 	int i;
 	
 	for(i=0;i<5;i++){
-		printf("%d. %s\t\t\t\t%d\t\t\t\t\t%d\n",i+1,list[i].nama,list[i].stok,list[i].harga);
+		printf("%d. %s\t\t\t\t%d\t\t\t\t\t%d\n",i+1,list[i].nama,list[i].harga);
 	}
+}
+
+void TampilList()
+{
+		list[0].nama = "Minyak goreng	",list[0].harga = 25000;
+	list[1].nama = "Snack",list[1].harga = 40000;
+	list[2].nama = "Daging Kambing",list[2].harga = 30000;
+	list[3].nama = "Mie Goreng	",list[3].harga = 3000;
+	list[4].nama = "Mie Rebus	",list[4].harga = 3000;
+	
 }
 
 int main(){
@@ -43,11 +53,8 @@ int main(){
 	Kasir[3].Nomor = 4;
 	Kasir[4].Nomor = 5;
 	
-	list[0].nama = "Daging Ayam	",list[0].stok = 10,list[0].harga = 25000;
-	list[1].nama = "Daging Sapi	",list[1].stok = 10,list[1].harga = 40000;
-	list[2].nama = "Daging Kambing",list[2].stok = 10,list[2].harga = 30000;
-	list[3].nama = "Mie Goreng	",list[3].stok = 100,list[3].harga = 3000;
-	list[4].nama = "Mie Rebus	",list[4].stok = 100,list[4].harga = 3000;
+	TampilList();
+	
 	for(;;){
 		system ("cls");
 	     header();
@@ -113,11 +120,7 @@ int main(){
 					scanf("%d",&jml);
 					Nama_Barang = list[kode-1].nama;
 					harga = list[kode-1].harga * jml;
-					list[kode-1].stok = list[kode-1].stok-jml;
-				if(list[kode-1].stok<0){
-					printf("Maaf Barang Habis\n");
-					list[kode-1].stok = 0;
-				}
+			
 					Pembeli->BarangBelian = Head_BarangBelian;				
 					Head_BarangBelian = Pembeli->BarangBelian;
 					Enqueue_BarangBelian(&Head_BarangBelian,harga,Nama_Barang,jml);
@@ -165,11 +168,7 @@ int main(){
 					Nama_Barang = list[kode-1].nama;
 					harga = list[kode-1].harga * jml;
 					
-					list[kode-1].stok = list[kode-1].stok-jml;
-				if(list[kode-1].stok<0){
-					printf("Maaf Barang Habis\n");
-					list[kode-1].stok = 0;
-				}
+		
 					Pembeli->BarangBelian = Head_BarangBelian;				
 					Head_BarangBelian = Pembeli->BarangBelian;
 					Enqueue_BarangBelian(&Head_BarangBelian,harga,Nama_Barang,jml);
