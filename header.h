@@ -13,6 +13,7 @@ Author			: Athalie Aurora, Claudia Berlian H, Marshya Nurrizatuzzahra
 #include <malloc.h>
 #include "boolean.h"
 
+
 #define nama(P) (P)->nama
 #define BarangBelian(P) (P)->BarangBelian
 #define Dompet(P) (P)->Dompet
@@ -66,6 +67,9 @@ typedef address_BB Queue_BB;
 typedef address_A Queue_A;
 
 void Kasir_Antrian();
+
+void TampilList();
+
 
 
 

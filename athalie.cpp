@@ -135,3 +135,8 @@ void deleteHistoryBelian(Queue_BB *Q){
 infochar X;
 Del_Awal_BarangBelian(&(*Q), &X);
 }
+
+
+
+
+
