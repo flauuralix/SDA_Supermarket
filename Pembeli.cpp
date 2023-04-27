@@ -25,7 +25,7 @@ I.S :
 - Data No kasir (Infotype terdefinisi No_Kasir)
 
 F.S :
-- Nama_Pembeli dan No_Kasir telah dimasukanvvke dalam Antrian Pembeli (*Q) di posisi terakhir
+- Nama_Pembeli dan No_Kasir telah dimasukan ke dalam Antrian Pembeli (*Q) di posisi terakhir
 */
 {
 	address_P a = NULL;  // variabel lokal a -> pointer P (Pembeli)
@@ -117,7 +117,7 @@ F.S : LinkedList pembeli terbentuk, Alamat node pembeli pertama menunjuk pada no
 
 //==================================== Modul buatan kelompok ====================================
 
-void main_menu(){
+void MainMenu(){
 	    printf("\t|-----------------------------|");
        	printf("\n\t|\t     MENU             |");    
        	 printf("\n\t|-----------------------------|");

@@ -9,38 +9,25 @@ Author			: Athalie Aurora, Claudia Berlian H, Marshya Nurrizatuzzahra
 #include <stdio.h>
 #include "header.h"
 
-
-
 /* ======= End of Header File ====== */
 
+DataKasir Kasir[4];
+DataBarang list[399];
 
-datakasir Kasir[5];
-DataBarang list[400];
-
-address_P Head_Pembeli = NULL;
-address_BB Head_BarangBelian = NULL;
-address_B Head_Barang = NULL;
-address_P Pembeli = NULL;
-address_B Barang; 
-address_BB BarangBelian;
-address_A Antrian;
-	
-infotype pil,kode,jml,nokasir,harga,lagi,Nomor,i=0;
-infochar nama,riwayat,Nama_Barang,pilih;
-
-void list_barang(){
+void PrintListBarang()
+{
 	int i;
+	TampilList();
 	
-	for(i=0;i<5;i++){
-		printf("%d. %s\t\t\t\t%d\t\t\t\t\t%d\n",i+1,list[i].nama,list[i].harga);
+	for(i=0;i<399;i++){
+		printf("%d. %s\t\t\t\t\t%d\n",i+1,list[i].nama,list[i].harga);
 	}
 }
 
-
 void TampilList()
 {
-	
-	list[1].nama = "Susu bubuk"	,list[1].harga = 25000;
+	list[0].nama = "Susu Murni", list[0].harga = 12000;
+	list[1].nama = "Susu bubuk",list[1] ,list[1].harga = 25000;
 	list[2].nama = "Minuman bersinergi", list[2].harga = 10000;
 	list[3].nama = "Soda", list[3].harga = 15000;
 	list[4].nama = "Ikan kaleng", list[4].harga = 35000;
@@ -439,27 +426,12 @@ void TampilList()
 	list[397].nama = "Tas sekolah", list[397].harga = 12000;	
 	list[398].nama = "Dompet koin", list[398].harga = 12000;	
 	list[399].nama = "Dompet panjang", list[399].harga = 15000;	
-	list[400].nama = "Dompet lipat", list[400].harga = 12000;	
+		
 																	
 }
 
-int main(){
-	Kasir[0].Nomor = 1; 
-	Kasir[1].Nomor = 2;
-	Kasir[2].Nomor = 3;
-	Kasir[3].Nomor = 4;
-	Kasir[4].Nomor = 5;
-	
-	TampilList();
-	
-	for(;;){
-		system ("cls");
-	     header();
-	     int tekan;
-	     printf("TEKAN ENTER UNTUK LANJUT..");
-	     scanf("%c",&tekan);
-	     system ("cls");
-		void Kasir_Antrian();
+void TampilAntrian()
+{
 		printf ("\t___________________________________________________________________________________________________________________________________");
 		printf ("\n\t|             |");
 		printf ("\n\t|   Kasir 1   |"); Tampil_List_Antrian(Kasir[0].next);
@@ -482,156 +454,176 @@ int main(){
 		printf ("\t|             |");
 		printf ("\n\t-----------------------------------------------------------------------------------------------------------------------------------\n");
 		printf("\n");
-		tampilan_kasir();			
+}
+
+
+int main()
+{
+	address_P Head_Pembeli = NULL;
+	address_BB Head_BarangBelian = NULL;
+	address_B Head_Barang = NULL;
+	address_P Pembeli = NULL;
+	address_B Barang; 
+	address_BB BarangBelian;
+	address_A Antrian;
+	
+
+	// variabel lokal
+	infotype pilih,lagi,tekan;
+	
+	// struk
+	infochar Nama_Pembeli, nama, Nama_Barang;
+	infotype No_Kasir, harga, Harga, Jumlah_Barang, Nomor;
+	
+	// Terdapat 5 kasir sesuai pada nomor
+	Kasir[0].Nomor = 1; 
+	Kasir[1].Nomor = 2;
+	Kasir[2].Nomor = 3;
+	Kasir[3].Nomor = 4;
+	Kasir[4].Nomor = 5;
+	
+	system ("cls");
+	header();	
+	printf("TEKAN ENTER UNTUK LANJUT..");
+	scanf("%c",&tekan);
+	
+	system ("cls");
+		
+	TampilAntrian();
+	MainMenu();
+					
 		printf("\nPilihan : "); 
-		scanf("%d", &pil);
+		scanf("%d", &pilih);
+		switch(pilih)
+		{
+			case 1 :
+				{
+					//Pelanggan
+					header();
+					
+					
+					break;
+				}
+			
+			case 2 :
+				{
+					//Proses Kasir atau Antrian
+					break;
+				}
+			
+			case 3 :
+				{
+					//Pembayaran
+					break;
+				}
+			
+			case 4 :
+				{
+					//History
+					break;
+				}
+			case 5 :
+				{
+					//Exit
+					break;
+				}
+			
+			default:
+				printf("Mohon masukan angka 1-5");
+				return main();
+		}
+		
+}
+
+/*
+{
+
+	for(;;)
+	{
+		
+		
 		system("cls");
+		
 		switch(pil)
 		{
-			case 1 :{
+			case 1 :
+				{
 					lagi = 1;
-			    printf("--SElAMAT DATANG DI SUPERMAERKET MARCAU--");
-				printf("\n\tNAMA PELANGGAN: ");
-				scanf("%s",&nama);
-				Enqueue_Pembeli(&Head_Pembeli,&Head_BarangBelian,nama,nokasir);
-				Pembeli = Head_Pembeli;
-				while(Pembeli->next != NULL){ 
-					Pembeli = Pembeli->next;	
-				}
-			
-  	printf   ("\t\t  +======================================+ \n");
-	printf   ("\t\t  |   TEMPAT BELANJA YANG TERSEDIA       | \n");
-	printf   ("\t\t  |--------------------------------------| \n");
-	printf   ("\t\t  |           - KERANJANG                | \n");
-	printf   ("\t\t  |           - TROLI                    | \n");
-    printf   ("\t\t  |--------------------------------------| \n");
-    printf("\t\t Silahkan ketik pilihan anda:");
-    scanf("%s",&pilih);
+			    	printf("--SElAMAT DATANG DI SUPERMAERKET MARCAU--\n");
+			    	printf("Tolong masukan nama Anda\n");
 
-
-				list_barang();
-				while (lagi == 1){
-					printf("\nPilih Barang: ");
-					scanf("%d",&kode);
-					printf("\nMasukan Jumlah Barang: ");
-					scanf("%d",&jml);
-					Nama_Barang = list[kode-1].nama;
-					harga = list[kode-1].harga * jml;
-			
-					Pembeli->BarangBelian = Head_BarangBelian;				
-					Head_BarangBelian = Pembeli->BarangBelian;
-					Enqueue_BarangBelian(&Head_BarangBelian,harga,Nama_Barang,jml);
-					printf("\nBelanja Lagi?\n 1.Ya\n 2.Tidak\nInput Pilihan: ");
-					scanf("%d",&lagi);
+					printf("\n\tNAMA PELANGGAN: ");
+					scanf("%s",&Nama_Pembeli);
+				
+					Enqueue_Pembeli(&Head_Pembeli,&Head_BarangBelian,Nama_Pembeli,No_Kasir);
+					Pembeli = Head_Pembeli;
+					PrintListBarang();
 				}
-				break;
-			}
-			case 2 :{
+				
 			
-				printf("\nPilih No. Kasir (1-5): ");
-				scanf("%d",&nokasir);
-				Antrian = NULL;
-				Create_Node_Antrian(&Antrian);
-				Isi_Node_Antrian(&Antrian, Pembeli->Nama_Pembeli);
-				Ins_Akhir_Antrian(&Kasir[nokasir-1].next,Antrian);
-				printf("\nAnda Sudah Masuk Antrian\n");
-				system("pause");	
-				break;
-			}
+			case 2 :
+				{
+					printf("\nPilih No. Kasir (1-5): ");
+					scanf("%d",&No_Kasir);
+					Antrian = NULL;
+					Create_Node_Antrian(&Antrian);
+					Isi_Node_Antrian(&Antrian, Pembeli->Nama_Pembeli);
+					Ins_Akhir_Antrian(&Kasir[No_Kasir-1].next,Antrian);
+					printf("\nAnda Sudah Masuk Antrian\n");
+					system("pause");	
+					break;
+				}
 			case 3 :
-				int item;
-			printf("Apakah anda ingin menambahkan atau mengurangi Item? \n1.Ya\n2.Tidak\nInput Pilihan:");
-			scanf("%d",&item);
-			switch(item){
-			 case 1:
-			    printf("Anda di kasir berapa(1-5)?: ");
-				scanf("%d",&i);
-				Dequeue_Antrian(&Kasir[i-1].next,&nama);
-				system("pause");
-				printf("Nama %s telah dikeluar dari antrian silahkan antri kembali\n",&nama);
-			   	lagi = 1;
-				Enqueue_Pembeli(&Head_Pembeli,&Head_BarangBelian,nama,nokasir);
-				Pembeli = Head_Pembeli;
-				while(Pembeli->next != NULL){ 
-					Pembeli = Pembeli->next;	
-				}
-				
-				list_barang();
-				while (lagi == 1){
-					printf("\nPilih Barang: ");
-					scanf("%d",&kode);
-					printf("\nMasukan Jumlah Barang: ");
-					scanf("%d",&jml);
-					Nama_Barang = list[kode-1].nama;
-					harga = list[kode-1].harga * jml;
+				{
+					//Pembayaran
 					
-		
-					Pembeli->BarangBelian = Head_BarangBelian;				
-					Head_BarangBelian = Pembeli->BarangBelian;
-					Enqueue_BarangBelian(&Head_BarangBelian,harga,Nama_Barang,jml);
-					printf("\nBelanja Lagi?\n 1.Ya\n 2.Tidak\nInput Pilihan: ");
-					scanf("%d",&lagi);
+					
 				}
-				printf("\nNAMA PELANGGAN: ");
-				scanf("%s",&nama);
-				Enqueue_Pembeli(&Head_Pembeli,&Head_BarangBelian,nama,nokasir);
-				Pembeli = Head_Pembeli;
-				while(Pembeli->next != NULL){ 
-					Pembeli = Pembeli->next;	
-				}
-				
-				printf("\nPilih No. Kasir (1-5): ");
-				scanf("%d",&nokasir);
-				Antrian = NULL;
-				Create_Node_Antrian(&Antrian);
-				Isi_Node_Antrian(&Antrian, Pembeli->Nama_Pembeli);
-				Ins_Akhir_Antrian(&Kasir[nokasir-1].next,Antrian);
-				printf("\nAnda Sudah Masuk Antrian\n");
-				break;
-				case 2:
-					main();
-
-			}
 			
 				break;
 			
 			
 			case 4 :
-				printf("\t\t\t\t   ___________History Transaksi___________\n");
-				printf("\n");
-				printf("------------------------------------------------------\n");
-				printf("Nama Pelanggan : %s\n", &nama);
-				printf("Kasir :\n");
-				printf("pilihan:  %s \n",&pilih);
-				printf("______Nama Barang_____   __Jumlah__   ____Harga____\n");
-				printf("___________________________________________________\n");
-				printf("Total                     jml brg        jml hrg   \n");
-				printf("------------------------------------------------------\n");
-				system("pause");
+				{
+					//History
+					addHistoryBelian(&Head_BarangBelian, harga, Nama_Barang, Jumlah_Barang);	
+					printHistoryBelian(Head_BarangBelian);
+				}
+				
 				break;
 			
 			case 5 :
+				{
+					//Exit
+					
+					
+					
+					
+				}
 
+				break;
+
+	    }
+	}
+}
+*/
+
+
+/*
 				printf("Pilih Kasir(1-5): ");
 				scanf("%d",&i);
-				Dequeue_Antrian(&Kasir[i-1].next,&nama);
-				printf("Nama %s telah dihapus dari antrian\n",&nama);
+				Dequeue_Antrian(&Kasir[i-1].next,&Nama_pelanggan);
+				printf("Nama %s telah dihapus dari antrian\n",&Nama_pelanggan);
 				system("pause");
 				printf("Maaf Toko sudah ditutup");
 				exit(1);
 				break;
 				printf("Pilihan Tidak Tersedia\n");
 				system("pause");
-				break;
-
-	    	}
-	    }
-	}
-
+				
+*/
 
 	
 		
 
 	
-
-
