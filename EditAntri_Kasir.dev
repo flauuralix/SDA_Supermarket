@@ -71,7 +71,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit4]
-FileName=claudia.cpp
+FileName=Pembeli.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -81,7 +81,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit6]
-FileName=mars.cpp
+FileName=Antrian.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -121,7 +121,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit5]
-FileName=athalie.cpp
+FileName=Barang.cpp
 CompileCpp=1
 Folder=
 Compile=1
