@@ -38,8 +38,8 @@ void list_barang(){
 
 void TampilList()
 {
-		list[0].nama = "Minyak goreng	",list[0].harga = 25000;
-	list[1].nama = "Snack",list[1].harga = 40000;
+list[0].nama = "Minyak goreng",list[0].harga = 25000;
+   	list[1].nama ="Snack",list[1].harga = 40000;
 	list[2].nama = "Daging Kambing",list[2].harga = 30000;
 	list[3].nama = "Mie Goreng	",list[3].harga = 3000;
 	list[4].nama = "Mie Rebus	",list[4].harga = 3000;
@@ -206,9 +206,8 @@ int main(){
 				printf("Nama Pelanggan : %s\n", &nama);
 				printf("Kasir :\n");
 				printf("pilihan:  %s \n",&pilih);
-				printf("______Nama Barang_____   __Jumlah__   ____Harga____\n");
-				printf("___________________________________________________\n");
-				printf("Total                     jml brg        jml hrg   \n");
+				printf("total barang: \n");
+				printf("Total harga:  \n");
 				printf("------------------------------------------------------\n");
 				system("pause");
 				break;
@@ -220,11 +219,11 @@ int main(){
 				Dequeue_Antrian(&Kasir[i-1].next,&nama);
 				printf("Nama %s telah dihapus dari antrian\n",&nama);
 				system("pause");
-				printf("Maaf Toko sudah ditutup");
-				exit(1);
-				break;
-				printf("Pilihan Tidak Tersedia\n");
-				system("pause");
+//				printf("Maaf Toko sudah ditutup");
+//				exit(1);
+//				break;
+//				printf("Pilihan Tidak Tersedia\n");
+//				system("pause");
 				break;
 
 	    	}

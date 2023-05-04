@@ -96,7 +96,7 @@ void tampilan_kasir(){
        	 printf("\n\t|-----------------------------|");
 		printf(" \n\t|     1.  PELANGGAN           |\n");
 		 printf("\t|-----------------------------|");
-		printf(" \n\t|     2. PROSES KASIR         |\n");
+		printf(" \n\t|     2. PILIH KASIR         |\n");
 		printf("\t|-----------------------------|");
 		printf("\n\t|     3. PEMABAYARAN          |\n");
 		printf("\t|-----------------------------|");
