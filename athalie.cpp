@@ -1,7 +1,7 @@
 /*       
-File Name		: barang.cpp
+File Name		: athalie.cpp
 Description		: Tubes Struktur Data dan Algoritma
-Author			: Athalie Aurora
+Author			: Athalie Aurora, Claudia Berlian H, Marshya Nurrizatuzzahra
 */
 
 /* ========== Header File ========== */
