@@ -15,7 +15,7 @@ Author			: Athalie Aurora, Claudia Berlian H, Marshya Nurrizatuzzahra
 
 
 datakasir Kasir[5];
-DataBarang list[20];
+DataBarang list[10];
 
 address_P Head_Pembeli = NULL;
 address_BB Head_BarangBelian = NULL;
@@ -34,7 +34,7 @@ infochar nama,riwayat,Nama_Barang,pilih;
 
 
 //list barang sembako ====================== Marshya
-void list_barang(){	
+/*void list_barang(){	
 	list[0].nama = "Minyak goreng  ";
 	list[0].stok=10;
 	list[0].harga = 25000;
@@ -114,10 +114,10 @@ void list_barang(){
 	list[19].nama = "Semangka      "; 
 	list[19].stok=10;
 	list[19].harga = 13000;
-}
+}*/
 
 //Tampil list barang ====================== Marshya
-void tampil_menu_barang(){
+/*void tampil_menu_barang(){
 	menu_barang();
 	printf("\nPilihan : "); 
 	scanf("%d", &pil);
@@ -159,8 +159,13 @@ void tampil_menu_barang(){
 			break;
 		}
 	}
-}
+}*/
 
+void print_barang(){
+	for(i=0;i<10;i++){
+		printf("%d. %s\t\t\t\t%d\t\t\t\t\t%d\n",i+1,list[i].nama,list[i].stok,list[i].harga);
+	}
+}
 
 int main() {
 
@@ -172,6 +177,46 @@ int main() {
 	Kasir[2].Nomor = 3;
 	Kasir[3].Nomor = 4;
 	Kasir[4].Nomor = 5;
+
+	list[0].nama = "Minyak goreng  ";
+	list[0].stok=10;
+	list[0].harga = 25000;
+	
+	list[1].nama = "Gula           ";
+	list[1].stok=10;
+	list[1].harga = 9000;
+			
+	list[2].nama = "Mie goreng     ";
+	list[2].stok=10;
+	list[2].harga = 3000;
+			
+	list[3].nama = "Mie kuah       ";
+	list[3].stok=10;
+	list[3].harga = 3000;
+	
+	list[4].nama = "Beras          "; 
+	list[4].stok=10;
+	list[4].harga = 25000;
+
+	list[5].nama = "Susu Murni     ";
+	list[5].stok=10;
+	list[5].harga = 12000;
+	
+	list[6].nama = "Teh Wangi      ";
+	list[6].stok=10;
+	list[6].harga = 12000;
+	
+	list[7].nama = "Soda           ";
+	list[7].stok=10;
+	list[7].harga = 10000;
+	
+	list[8].nama = "Jus Jeruk      ";
+	list[8].stok=10;
+	list[8].harga = 8000;
+	
+	list[9].nama = "Jus Jambu      ";
+	list[9].stok=10;
+	list[9].harga = 8000;
 
 	for(;;) {
 		
@@ -254,7 +299,7 @@ int main() {
 					
 					//Tampilan menu barang ====================== Marshya
 					system("cls"); 
-					tampil_menu_barang(); 
+					print_barang(); 
 					printf("\nPilih Barang: ");
 					scanf("%d",&kode);
 					printf("\nMasukan Jumlah Barang: ");
@@ -288,7 +333,7 @@ int main() {
 								
 								//Tampilan menu barang ====================== Marshya
 								system ("cls");
-							    tampil_menu_barang();
+							    print_barang();
 								printf("\nPilih Barang: ");
 								scanf("%d",&kode);
 								printf("\nMasukan Jumlah Barang: ");
@@ -318,7 +363,7 @@ int main() {
 								main();
 						}
 					}
-				}
+					}
 				
 				
 								
@@ -458,7 +503,7 @@ int main() {
 							
 							//Tampilan menu barang ====================== Marshya
 							system("cls");
-							tampil_menu_barang();
+							print_barang();
 								
 							printf("\nPilih Item: ");
 							scanf("%d",&kode);
@@ -493,7 +538,7 @@ int main() {
 										
 										//Tampilan menu barang ====================== Marshya
 										system ("cls");
-										tampil_menu_barang();
+										print_barang();
 										printf("\nPilih Item: ");
 										scanf("%d",&kode);
 										printf("\nMasukan Jumlah Item Yang ingin ditambah: ");
