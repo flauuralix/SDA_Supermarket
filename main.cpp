@@ -228,7 +228,7 @@ int main() {
 		system("cls");
 		
 		
-		switch(pil) {
+		switch(pil){
 			
 			//================================================ Claudia ================================================= Menu Pelanggan
 			case 1 : {
@@ -335,17 +335,113 @@ int main() {
 				system("pause");
 				break;
 			}
-			case 3 :
+			case 3:{	
 				int item;
-				printf("Apakah anda ingin menambahkan atau mengurangi Item? \n1.Ya\n2.Tidak\nInput Pilihan:");
+				printf("Apakah anda ingin menambahkan atau mengurangi Item? \n1.Mengurangi Item\n2.Menambahkan Item\n3.Tidak\nInput Pilihan:");
 				scanf("%d",&item);
 				switch(item) {
-					case 1:
+					case 1:{
 						printf("Anda berada dikasir berapa(1-5)?: ");
 						scanf("%d",&i);
 						Dequeue_Antrian(&Kasir[i-1].next,&nama);
-						system("pause");
+					
 						printf("Nama %s telah dihapus dari antrian silahkan antri kembali\n",&nama);
+						system("pause");
+						lagi = 1;
+						Enqueue_Pembeli(&Head_Pembeli,&Head_BarangBelian,nama,nokasir);
+						Pembeli = Head_Pembeli;
+						while(Pembeli->next != NULL) {
+							Pembeli = Pembeli->next;
+						}
+							while (lagi == 1) {
+							printf("\nMasukan Jumlah Item Yang Ingin Dikurangi: ");//______________________________________Claudia
+							scanf("%d",&jml);//____________________________________________________________________________
+					
+//								list[kode-1].stok = list[kode-1].stok+jml;
+
+							if(list[kode-1].stok<0) {
+								printf("Maaf Item Habis\n");
+								list[kode-1].stok = 0;
+							} else {
+
+								jmlTotal -= jml;//______________________________________Claudia
+//								printf("\n\nTotal %s: %d\n",Nama_Barang,10 - list[kode-1].stok);
+								printf("\n\nTotal barang: %d\n",jmlTotal);
+								harga_barang = list[kode-1].harga * jml;
+								harga -= harga_barang;//______________________________________
+								printf("\n\nTotal Harga: %d\n",harga);
+								}
+							Pembeli->BarangBelian = Head_BarangBelian;
+							Head_BarangBelian = Pembeli->BarangBelian;
+							Enqueue_BarangBelian(&Head_BarangBelian,harga,Nama_Barang,jml);
+							printf("\nBelanja Lagi?\n 1.Ya\n 2.Tidak\nInput Pilihan: ");
+							scanf("%d",&lagi);
+							 	while (lagi == 1) {
+								switch(lagi) {
+									case 1:
+										system ("cls");
+										printf("\nMasukan Jumlah Item Yang Ingin Dikurangi: ");
+										scanf("%d",&jml);
+										
+										Nama_Barang = list[kode-1].nama;	//_________________________________________Claudia
+										list[kode-1].stok=list[kode-1].stok-jml;
+										list[kode-1].jml -= jml;//_____________________________________________________
+										if(list[kode-1].stok<0 ) {
+											printf("Maaf Barang Habis\n");
+											list[kode-1].stok = 0;
+										} else {
+
+											jmlTotal -= jml;//______________________________________Claudia
+//											printf("\n\nTotal %s: %d\n",Nama_Barang,10 - list[kode-1].stok);
+											printf("\n\nTotal Item: %d\n",jmlTotal);
+											harga_barang = list[kode-1].harga * jml;
+											harga -= harga_barang;
+
+//					harga = (list[kode-1].harga * jml)+harga;
+											printf("\n\nTotal Harga: %d\n",harga);
+										}	
+										
+										Pembeli->BarangBelian = Head_BarangBelian;
+										Head_BarangBelian = Pembeli->BarangBelian;
+										Enqueue_BarangBelian(&Head_BarangBelian,harga,Nama_Barang,jml);
+										printf("\nBelanja Lagi?\n 1.Ya\n 2.Tidak\nInput Pilihan: ");
+										scanf("%d",&lagi);
+										break;
+									case 2:
+										main();
+										break;
+								    } //___________________________________________________________________
+							    }
+						    }
+						            printf("\nNAMA PELANGGAN: ");
+						            scanf("%s",&nama);
+						            Enqueue_Pembeli(&Head_Pembeli,&Head_BarangBelian,nama,nokasir);
+						            Pembeli = Head_Pembeli;
+						             while(Pembeli->next != NULL) {
+						          	Pembeli = Pembeli->next;
+						             }
+
+						             printf("\nPilih No. Kasir (1-5): ");
+						              scanf("%d",&nokasir);
+						             Antrian = NULL;
+						             Create_Node_Antrian(&Antrian);
+					                Isi_Node_Antrian(&Antrian, Pembeli->Nama_Pembeli);
+					            	Ins_Akhir_Antrian(&Kasir[nokasir-1].next,Antrian);
+						            printf("\nAnda Sudah Masuk Antrian\n");
+						            system("pause");
+					
+						break;
+					}
+								
+						break;
+					   case 2:{
+						
+						printf("Anda berada dikasir berapa(1-5)?: ");
+						scanf("%d",&i);
+						Dequeue_Antrian(&Kasir[i-1].next,&nama);
+					
+						printf("Nama %s telah dihapus dari antrian silahkan antri kembali\n",&nama);
+						system("pause");
 						lagi = 1;
 						Enqueue_Pembeli(&Head_Pembeli,&Head_BarangBelian,nama,nokasir);
 						Pembeli = Head_Pembeli;
@@ -357,9 +453,9 @@ int main() {
 							system("cls");
 							tampil_menu_barang();//________________________________________________Marshya
 								
-							printf("\nPilih Barang: ");
+							printf("\nPilih Item: ");
 							scanf("%d",&kode);
-							printf("\nMasukan Jumlah Barang: ");
+							printf("\nMasukan Jumlah Item Yang Ditambah: ");
 							scanf("%d",&jml);
 							
 							Nama_Barang = list[kode-1].nama;//______________________________________Claudia
@@ -368,13 +464,13 @@ int main() {
 							list[kode-1].stok = list[kode-1].stok-jml;
 
 							if(list[kode-1].stok<0) {
-								printf("Maaf Barang Habis\n");
+								printf("Maaf Item Habis\n");
 								list[kode-1].stok = 0;
 							} else {
 
 								jmlTotal += jml;
 								printf("\n\nTotal %s: %d\n",Nama_Barang,10 - list[kode-1].stok);
-								printf("\n\nTotal barang: %d\n",jmlTotal);
+								printf("\n\nTotal Item: %d\n",jmlTotal);
 								harga_barang = list[kode-1].harga * jml;
 								harga += harga_barang;
 								printf("\n\nTotal Harga: %d\n",harga);
@@ -392,22 +488,22 @@ int main() {
 										//list_barang();
 									//	system("cls");
 										tampil_menu_barang();	//____________________________________________________Marshya
-										printf("\nPilih Barang: ");
+										printf("\nPilih Item: ");
 										scanf("%d",&kode);
-										printf("\nMasukan Jumlah Barang: ");
+										printf("\nMasukan Jumlah Item Yang ingin ditambah: ");
 										scanf("%d",&jml);
 										
 										Nama_Barang = list[kode-1].nama;	//_________________________________________Claudia
 										list[kode-1].stok=list[kode-1].stok-jml;
 										list[kode-1].jml += jml;
 										if(list[kode-1].stok<0 ) {
-											printf("Maaf Barang Habis\n");
+											printf("Maaf Item Habis\n");
 											list[kode-1].stok = 0;
 										} else {
 
 											jmlTotal += jml;
 											printf("\n\nTotal %s: %d\n",Nama_Barang,10 - list[kode-1].stok);
-											printf("\n\nTotal barang: %d\n",jmlTotal);
+											printf("\n\nTotal Item: %d\n",jmlTotal);
 											harga_barang = list[kode-1].harga * jml;
 											harga += harga_barang;
 
@@ -442,12 +538,15 @@ int main() {
 						Ins_Akhir_Antrian(&Kasir[nokasir-1].next,Antrian);
 						printf("\nAnda Sudah Masuk Antrian\n");
 						break;
-					case 2:
+					}
+					case 3:
+						
 						main();
-						break;
-				}
-				break;
-
+						break;	
+			}
+			break;
+		}
+		
 			case 4 :
 				printf("\t\t\t\t   ___________History Transaksi___________\n");
 				printf("\n");
@@ -472,10 +571,14 @@ int main() {
 				break;
 				//printf("Pilihan Tidak Tersedia\n");
 				system("pause");
-				break;
-		}
-	}
+				break;	
+	
 }
+}
+}
+
+
+
 
 
 
