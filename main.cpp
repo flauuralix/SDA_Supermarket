@@ -319,7 +319,9 @@ int main() {
 								main();
 						}
 					}
-				}//___________________________________________________________________________________________________
+					}
+				
+				//___________________________________________________________________________________________________
 								
 				break;
 			}
@@ -332,6 +334,7 @@ int main() {
 				Isi_Node_Antrian(&Antrian, Pembeli->Nama_Pembeli);
 				Ins_Akhir_Antrian(&Kasir[nokasir-1].next,Antrian);
 				printf("\nAnda Sudah Masuk Antrian\n");
+				
 				system("pause");
 				break;
 			}
