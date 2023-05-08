@@ -36,6 +36,7 @@ typedef struct List_Pembeli {
 address_BB BarangBelian;
 infochar Nama_Pembeli;
 infotype No_Kasir;
+infochar Tempat_Bawaan;
 infotype harga_barang;
 address_P next;
 } List_Pembeli;
@@ -57,8 +58,6 @@ address_BB next;
 
 typedef struct List_Antrian {
 infochar nama;
-//infochar pilih;
-//infotype jmlTotal;
 address_A next;
 } List_Antrian;
 
@@ -76,9 +75,9 @@ typedef address_A Queue_A;
 
 
 
+void Kasir_Antrian();
 
-
-// ============================================================= List Pembeli
+// ============================================================= List Pelanggan
 
 //// void CreateEmpty_Pembeli(Queue_P *Q);
 
@@ -114,7 +113,7 @@ void Dequeue_Antrian(Queue_A *Q,infochar *X);
 
 
 
-// ============================================================= List Pembeli
+// ============================================================= List Pelanggan
 
 boolean isEmpty_Pembeli(address_P p);
 // Tujuan : memeriksa apakah linked masih kosong
@@ -138,8 +137,8 @@ void Ins_Akhir_Pembeli (address_P *p, address_P PNew);
 /* IS : p mungkin Kosong */
 /* FS : menyambungkan elemen baru (PNew) di akhir Linked List */
 void tampilan_kasir();
-
-
+void TampilList();
+void tempat(int *index);
 
 // ============================================================= Barang Belian
 
@@ -203,6 +202,11 @@ void Del_Awal_Antrian (address_A * p, infochar * X);
 /* dan alamat elemen pertama di dealokasi */
 void Kasir_Antrian();
 void header();
+void menu_barang();
+void sembako();
+void minuman();
+void sayur();
+void buah();
 
 
 

@@ -1,12 +1,7 @@
-/*       
-File Name		: Pembeli.cpp
-Description		: Tubes Struktur Data dan Algoritma
-Author			: Claudia berlian harli
-*/
-
 #include <stdio.h>
 #include "header.h"
 #include <cstring>
+
 
 /* ======= End of Header File ====== */
 

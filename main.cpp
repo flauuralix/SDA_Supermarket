@@ -32,22 +32,6 @@ infotype lagi,tekan,pil;
 infotype kode,jml,nokasir,harga,Nomor,i=0,stok,barang,harga_barang;
 infochar nama,riwayat,Nama_Barang,pilih;
 
-//Menu barang
-void menu_barang(){
-	printf("\t|-----------------------------|");
-	printf("\n\t|\t     MENU             |");    
-    printf("\n\t|-----------------------------|");
-	printf(" \n\t|         1. SEMBAKO          |\n");
-	printf("\t|-----------------------------|");
-	printf(" \n\t|         2. MINUMAN          |\n");
-	printf("\t|-----------------------------|");
-	printf("\n\t|          3. SAYUR           |\n");
-	printf("\t|-----------------------------|");
-	printf(" \n\t|          4. BUAH            |\n");
-	printf("\t|-----------------------------|");
-	printf(" \n\t|          5. EXIT            |\n");
-	printf("\t|-----------------------------|");
-	}
 
 //list barang sembako
 void sembako(){	
@@ -180,9 +164,7 @@ void tampil_menu_barang(){
 			break;
 		}
 					
-		case 5 :{
-			break;
-		}
+
 	}
 }
 
