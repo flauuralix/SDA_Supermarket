@@ -269,6 +269,7 @@ int main() {
 				   printf("--------------------------------------------------------------------------\n");
 				   printf("\nTotal barang   : %d\n",jmlTotal);
 				   printf("Total Harga    : %d\n",harga);
+				   printf("--------------------------Silahkan Lunaskan Pembayaran--------------------\n");
 				   printf("_________________________________________________________________________\n");
 				system("pause");
 				break;
@@ -562,7 +563,7 @@ int main() {
 				break;
 
 			case 5 :
-				printf("Pilih Kasir(1-5): ");
+				printf("Anda berada dikasir berapa(1-5)?: ");
 				scanf("%d",&i);
 				Dequeue_Antrian(&Kasir[i-1].next,&nama);
 				printf("Nama %s telah dihapus dari antrian\n",&nama);
