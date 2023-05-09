@@ -540,7 +540,31 @@ int main() {
 					}
 					case 3:
 						
-						main();
+					printf("__________________Struk Belanja__________________________________________\n");	// ====================== Claudia
+					printf("\n");
+					printf("-------------------------------------------------------------------------\n");
+					printf("Nama Pelanggan  : %s\n",&nama);
+					printf("Kasir           : %d\n",nokasir);
+					printf("pilihan         : %s\n",&pilih);
+					printf("--------------------------------------------------------------------------\n");
+					printf(" NAMA BARANG\t\tJUMLAH\t\t HARGA ");
+					for (int index=1;index<=10;index++){
+						if(list[index-1].stok!=10){
+							int jmlbrg=10-list[index-1].stok;
+						
+							printf("\n%s\t\tx%d \t\t %d\n",list[index-1].nama,jmlbrg,list[index-1].harga*jmlbrg);
+						}
+					}
+				   printf("--------------------------------------------------------------------------\n");
+				   printf("\nTotal barang   : %d\n",jmlTotal);
+				   printf("Total Harga    : %d\n",harga);
+				   printf("Uang Anda      : ");
+                   scanf("%d", &uang);
+                   kembalian = uang - harga;
+                   printf("Kembalian      : %d\n", kembalian);
+                   printf("-----------------------------LUNAS---------------------------------------\n");
+				   printf("_________________________________________________________________________\n");	
+				   system("pause");	// ==========================================================================================
 						break;
 			        
 			}
