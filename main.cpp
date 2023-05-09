@@ -251,7 +251,7 @@ int main() {
 				Isi_Node_Antrian(&Antrian, Pembeli->Nama_Pembeli);
 				Ins_Akhir_Antrian(&Kasir[nokasir-1].next,Antrian);
 				printf("\nAnda Sudah Masuk Antrian\n");
-<<<<<<< Updated upstream
+
 					printf("__________________Struk Belanja__________________________________________\n");
 					printf("\n");
 					printf("-------------------------------------------------------------------------\n");
@@ -272,8 +272,7 @@ int main() {
 				   printf("Total Harga    : %d\n",harga);
 				   printf("--------------------------Silahkan Lunaskan Pembayaran--------------------\n");
 				   printf("_________________________________________________________________________\n");
-=======
->>>>>>> Stashed changes
+
 				system("pause");
 				break;
 			}
