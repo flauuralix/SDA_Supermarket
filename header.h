@@ -202,11 +202,6 @@ void Del_Awal_Antrian (address_A * p, infochar * X);
 /* dan alamat elemen pertama di dealokasi */
 void Kasir_Antrian();
 void header();
-void menu_barang();
-void sembako();
-void minuman();
-void sayur();
-void buah();
 
 
 

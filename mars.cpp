@@ -146,17 +146,3 @@ void Del_Awal_Antrian (address_A * p, infochar * X){	// check
 	}
 	
 }
-void menu_barang(){
-	printf("\t|-----------------------------|");
-	printf("\n\t|\t     MENU             |");    
-    printf("\n\t|-----------------------------|");
-	printf(" \n\t|         1. SEMBAKO          |\n");
-	printf("\t|-----------------------------|");
-	printf(" \n\t|         2. MINUMAN          |\n");
-	printf("\t|-----------------------------|");
-	printf("\n\t|          3. SAYUR           |\n");
-	printf("\t|-----------------------------|");
-	printf(" \n\t|          4. BUAH            |\n");
-	printf("\t|-----------------------------|");
-	}
-
