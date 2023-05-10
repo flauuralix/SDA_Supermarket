@@ -24,47 +24,53 @@ Author			: Athalie Aurora, Claudia Berlian H, Marshya Nurrizatuzzahra
 #define next(P) (P)->next
 #define Nil NULL
 
-typedef int infotype;
-typedef const char *infochar;
-typedef struct List_Pembeli *address_P;
-typedef struct List_Barang *address_B;
-typedef struct List_BarangBelian *address_BB;
-typedef struct List_Antrian *address_A;
+typedef int infotype;							// Mendefinisikan tipe data integer (infotype)
+typedef const char *infochar;					// Mendefinisikan tipe data string (infochar)
+typedef struct List_Pembeli *address_P;			// Mendefinisikan tipe data pointer ke struk List_Pembeli
+typedef struct List_Barang *address_B;			// Mendefinisikan tipe data pointer ke struk List_Barang 
+typedef struct List_BarangBelian *address_BB;	// Mendefinisikan tipe data pointer ke struk List_BarangBelian
+typedef struct List_Antrian *address_A;			// Mendefinisikan tipe data pointer ke struk List_Antrian
 
 
-typedef struct List_Pembeli {
-address_BB BarangBelian;
-infochar Nama_Pembeli;
-infotype No_Kasir;
-infochar Tempat_Bawaan;
-infotype harga_barang;
-address_P next;
-} List_Pembeli;
+/*	Berkaitan dengan Pembeli = Nama, Barang Belian, No Kasir
+	Tambahan = Barang Bawaan (Keranjang atau Troli)  */
+	typedef struct List_Pembeli {
+	address_BB BarangBelian;
+	infochar Nama_Pembeli;
+	infotype No_Kasir;	
+	//infochar Tempat_Bawaan;
+	infotype harga_barang;
+	address_P next;
+	} List_Pembeli;
 
-typedef struct List_Barang{
-infochar nama;
-infotype stok;
-infotype jml;
-infotype harga;
-infochar pilih; 
-}DataBarang;
+/*	Berkaitan dengan Barang = Data Barang (nama,stok, harga) + jml */
+	typedef struct List_Barang {
+	infochar nama;
+	infotype stok;
+	infotype jml;
+	infotype harga;
+	infochar pilih; 
+	}DataBarang;
 
-typedef struct List_BarangBelian {
-infochar Nama_Barang;
-infotype Harga;
-infotype Jumlah_Barang;
-address_BB next;
-} List_BarangBelian;
+/*	Berkaitan dengan Barang Belian = Nama_Barang, Harga, Jumlah_Barang */
+	typedef struct List_BarangBelian {
+	infochar Nama_Barang;
+	infotype Harga;
+	infotype Jumlah_Barang;
+	address_BB next;
+	} List_BarangBelian;
 
-typedef struct List_Antrian {
-infochar nama;
-address_A next;
-} List_Antrian;
-
-typedef struct Kasir{
-infotype Nomor;
-address_A next;
-}datakasir;
+/*	Berkaitan dengan Antrian = Nama Pelanggan, Pembayaran sukses -> lanjut antrian berikutnya */
+	typedef struct List_Antrian {
+	infochar nama;
+	address_A next;
+	} List_Antrian;
+	
+/*	Berkaitan dengan Kasir = Nomor kasir */
+	typedef struct Kasir{
+	infotype Nomor;
+	address_A next;
+	} Datakasir;
 
 // Untuk Antrian 
 
@@ -76,6 +82,7 @@ typedef address_A Queue_A;
 
 
 void Kasir_Antrian();
+void tampilan_menu();
 
 // ============================================================= List Pelanggan
 

@@ -8,13 +8,12 @@ Author			: Athalie Aurora, Claudia Berlian H, Marshya Nurrizatuzzahra
 
 #include <stdio.h>
 #include "header.h"
-#include "antri.h"
 
 
 /* ======= End of Header File ====== */
 
 
-datakasir Kasir[5];
+Datakasir Kasir[5];
 DataBarang list[10];
 
 address_P Head_Pembeli = NULL;
@@ -40,18 +39,9 @@ void print_barang(){
 	}
 }
 
-int main() {
-
-	int jmlTotal=0;
-
-	// Terdapat 5 kasir sesuai pada nomor
-	Kasir[0].Nomor = 1;
-	Kasir[1].Nomor = 2;
-	Kasir[2].Nomor = 3;
-	Kasir[3].Nomor = 4;
-	Kasir[4].Nomor = 5;
-
-	list[0].nama = "Minyak goreng  ";
+void tampil_list()
+{
+		list[0].nama = "Minyak goreng  ";
 	list[0].stok=10;
 	list[0].harga = 25000;
 	
@@ -90,19 +80,13 @@ int main() {
 	list[9].nama = "Jus Jambu      ";
 	list[9].stok=10;
 	list[9].harga = 8000;
+	
+}
 
-	for(;;) {
+void tampil_kasir()
+{
+	//Tampilan Keadaan Kasir Terkini ====================== Marshya
 		
-		//Tampilan awal (logo) ====================== Marshya
-		system ("cls");
-		header();
-		printf("TEKAN ENTER UNTUK LANJUT..");
-		scanf("%c",&tekan);
-		system ("cls");
-		
-		
-		//Tampilan Keadaan Kasir Terkini ====================== Marshya
-		void Kasir_Antrian();
 		printf ("\t___________________________________________________________________________________________________________________________________");
 		printf ("\n\t|             |");
 		printf ("\n\t|   Kasir 1   |"); Tampil_List_Antrian(Kasir[0].next);
@@ -125,10 +109,41 @@ int main() {
 		printf ("\t|             |");
 		printf ("\n\t-----------------------------------------------------------------------------------------------------------------------------------\n");
 		printf("\n");
+	
+}
+
+
+int main() {
+
+	int jmlTotal=0;
+
+	// Terdapat 5 kasir sesuai pada nomor
+	Kasir[0].Nomor = 1;
+	Kasir[1].Nomor = 2;
+	Kasir[2].Nomor = 3;
+	Kasir[3].Nomor = 4;
+	Kasir[4].Nomor = 5;
+	
+	tampil_list();
+
+
+	for(;;) {
+		
+		//Tampilan awal (logo) ====================== Marshya
+		system ("cls");
+		header();
+		printf("TEKAN ENTER UNTUK LANJUT..");
+		scanf("%c",&tekan);
+		system ("cls");
+		
+		//Tampil Kasir
+		void Kasir_Antrian();
+		tampil_kasir();
+		
 		
 		
 		//Menu utama ====================== Claudia
-		tampilan_kasir();
+		tampilan_menu();
 		printf("\nPilihan : ");
 		scanf("%d", &pil);
 		system("cls");
