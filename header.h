@@ -109,6 +109,13 @@ void Ins_Akhir_Pembeli (address_P *p, address_P PNew);
 void Enqueue_Pembeli(Queue_P *Q, Queue_BB *P, infochar Nama_Pembeli, infotype No_Kasir);
 
 
+// Tempat Bawaan
+void Create_Node_TempatBawaan(address_TB *t);
+boolean isEmpty_TempatBawaan(address_TB p);
+void Isi_Node_TempatBawaan (address_TB *p , infochar Tempat_Bawaan);
+void Modif_Node_Pembeli (address_P *p , address_BB *q, address_TB *t, infochar Nama_Pembeli, infotype No_Kasir, infochar Tempat_Bawaan);
+void ModifEnqueue_Pembeli(Queue_P *Q, Queue_BB *P, Queue_TB *T, infochar Nama_Pembeli, infotype No_Kasir, infochar Tempat_Bawaan);
+
 
 //============================================== Barang ==================================================
 
@@ -124,6 +131,11 @@ void Del_Awal_BarangBelian (address_BB * p, infochar * X);
 
 void Enqueue_BarangBelian(Queue_BB *Q, infotype harga, infochar nama_barang, infotype jumlah);
 
+
+//Test
+void addHistoryBelian(Queue_BB *Q, infotype harga, infochar nama_barang, infotype jumlah_barang);
+void printHistoryBelian(Queue_BB Q);
+void deleteHistoryBelian(Queue_BB *Q);
 
 //============================================== Antrian ================================================
 
