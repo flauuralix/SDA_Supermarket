@@ -121,7 +121,8 @@ F.S :
 /*   			               Penambahan modul pada program  	    		        		*/
 
 
-void tampilan_menu(){
+void tampil_menu()
+{
 	    printf("\t|-----------------------------|");
        	printf("\n\t|\t     MENU             |");    
        	 printf("\n\t|-----------------------------|");

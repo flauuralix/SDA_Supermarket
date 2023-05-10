@@ -63,7 +63,8 @@ F.S : Node Antrian akan terisi dengan nama
 //------------------------------------------------------------------------------------------------------ 03
 
 
-void Tampil_List_Antrian (address_A p){		// check
+void Tampil_List_Antrian (address_A p)
+{
 	int i = 1;
 	if(isEmpty_Antrian(p)){
 		printf("List Kosong\n");

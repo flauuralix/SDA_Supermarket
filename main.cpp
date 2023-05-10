@@ -143,7 +143,7 @@ int main() {
 		
 		
 		//Menu utama ====================== Claudia
-		tampilan_menu();
+		tampil_menu();
 		printf("\nPilihan : ");
 		scanf("%d", &pil);
 		system("cls");
