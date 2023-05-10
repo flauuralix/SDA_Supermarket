@@ -139,3 +139,81 @@ void tampil_menu()
 	}
 //------------------------------------------------------------------------------------------------------ Claudia
 
+
+
+
+// Tempat Bawaan
+void Create_Node_TempatBawaan(address_TB *t)
+{
+	*t = (address_TB)malloc(sizeof(List_Pembeli));
+}
+//------------------------------------------------------------------------------------------------------ Athalie
+
+
+boolean isEmpty_TempatBawaan(address_TB p)
+{
+	
+	if(p == NULL)	// Mengecek apakah p = kosong ?
+	{
+		return 1;	// true
+	}else{
+		return 0;	// false
+	}
+	
+}
+//------------------------------------------------------------------------------------------------------ Athalie
+
+
+void Isi_Node_TempatBawaan (address_TB *p , infochar Tempat_Bawaan)
+{	
+	if(isEmpty_TempatBawaan(*p)){
+		printf("Node Belum di Alokasi\n");
+	}else{
+		next(*p) = Nil;
+		Tempat_Bawaan(*p) = Tempat_Bawaan;
+	}
+}
+//------------------------------------------------------------------------------------------------------ Athalie
+
+
+
+void Modif_Node_Pembeli (address_P *p , address_BB *q, address_TB *t, infochar Nama_Pembeli, infotype No_Kasir, infochar Tempat_Bawaan)
+/*
+I.S : Alamat Pembeli (address_P terdefinisi *p), Alamat Barang Belian (address BB terdefinisi *q), Nama_Pembeli, No_Kasir 
+F.S : 
+- Jika *p belum dialokasikan akan menampilkan "Node belum di Alokasi" 
+- Jika *p sudah dialokasikan maka nilai dari Nama_Pembeli, No_Kasir, dan *q akan diisi atau diimasukan pada Node Pembeli
+*/
+{
+
+	if(isEmpty_Pembeli(*p)){
+		printf("Node Belum di Alokasi");
+	}else{
+		next(*p) = Nil;
+		BarangBelian(*p) = *q;
+		Tempat_Bawaan(*t) = Tempat_Bawaan;
+		Nama_Pembeli(*p) = Nama_Pembeli;
+		No_Kasir(*p) = No_Kasir;
+	}
+}
+//------------------------------------------------------------------------------------------------------ Athalie
+
+
+
+void ModifEnqueue_Pembeli(Queue_P *Q, Queue_BB *P, Queue_TB *T, infochar Nama_Pembeli, infotype No_Kasir, infochar Tempat_Bawaan)
+{
+	address_P a = NULL;
+	address_BB b = NULL;
+	address_TB t = NULL;
+	
+	Create_Node_Pembeli(&a); // Membuat node Pembeli baru pada linkedlist
+    Create_Node_BarangBelian(&b); // Membuat node Barang Belian baru pada linkedlist
+    Create_Node_TempatBawaan(&t); // Membuat node Tempat Bawaan baru pada linkedlist
+    
+   	Isi_Node_Pembeli(&a, &b, Nama_Pembeli,No_Kasir); // Mengisi data pada node yang telah dibuat pada linkedlist
+    Isi_Node_TempatBawaan(&t, Tempat_Bawaan); // Mengisi data pada node Tempat Bawaan
+    Ins_Akhir_Pembeli(&(*Q), a); // Memasukan node yang telah dibuat pada akhir antrian pembeli
+    /*Ins_Akhir_TempatBawaan(&(*T), t); // Memasukan node Tempat Bawaan yang telah dibuat pada akhir antrian Tempat Bawaan
+    */
+}
+

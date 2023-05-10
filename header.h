@@ -42,6 +42,14 @@ typedef struct List_Antrian *address_A;			// Mendefinisikan tipe data pointer ke
 	infotype harga_barang;
 	address_P next;
 	} List_Pembeli;
+	
+	#define Tempat_Bawaan(P) (P)->Tempat_Bawaan
+	typedef struct List_Bawaan *address_TB;
+	
+	typedef struct List_Bawaan{
+	infochar Tempat_Bawaan;	
+	address_TB next;
+	}TempatBawaan;
 
 /*	Berkaitan dengan Barang = Data Barang (nama,stok, harga) + jml */
 	typedef struct List_Barang {
@@ -78,7 +86,7 @@ typedef struct List_Antrian *address_A;			// Mendefinisikan tipe data pointer ke
 									  typedef address_B Queue_B;
 									  typedef address_BB Queue_BB;
 									  typedef address_A Queue_A;
-									//  typedef address_TB Queue_TB;
+									  typedef address_TB Queue_TB;
 // 									-------------------------------
 
 void header();			//------------------- Marshya
