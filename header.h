@@ -18,6 +18,7 @@ Author			: Athalie Aurora, Claudia Berlian H, Marshya Nurrizatuzzahra
 #define Dompet(P) (P)->Dompet
 #define Nama_Pembeli(P) (P)->Nama_Pembeli
 #define No_Kasir(P) (P)->No_Kasir
+#define Tempat_Bawaan(P) (P)->Tempat_Bawaan
 #define Harga(P) (P)->Harga
 #define Jumlah_Barang(P) (P)->Jumlah_Barang	
 #define Nama_Barang(P) (P)->Nama_Barang
@@ -30,6 +31,7 @@ typedef struct List_Pembeli *address_P;			// Mendefinisikan tipe data pointer ke
 typedef struct List_Barang *address_B;			// Mendefinisikan tipe data pointer ke struk List_Barang 
 typedef struct List_BarangBelian *address_BB;	// Mendefinisikan tipe data pointer ke struk List_BarangBelian
 typedef struct List_Antrian *address_A;			// Mendefinisikan tipe data pointer ke struk List_Antrian
+typedef struct List_Bawaan *address_TB;			// Mendefinisikan tipe data pointer ke struk List_Bawaan
 
 
 /*	Berkaitan dengan Pembeli = Nama, Barang Belian, No Kasir
@@ -38,14 +40,11 @@ typedef struct List_Antrian *address_A;			// Mendefinisikan tipe data pointer ke
 	address_BB BarangBelian;
 	infochar Nama_Pembeli;
 	infotype No_Kasir;	
-	//infochar Tempat_Bawaan;
 	infotype harga_barang;
 	address_P next;
 	} List_Pembeli;
 	
-	#define Tempat_Bawaan(P) (P)->Tempat_Bawaan
-	typedef struct List_Bawaan *address_TB;
-	
+
 	typedef struct List_Bawaan{
 	infochar Tempat_Bawaan;	
 	address_TB next;
@@ -94,6 +93,16 @@ void header();			//------------------- Marshya
 void tampil_list();		//------------------- Athalie
 void tampil_menu(); 	//------------------- Claudia
 void tampil_kasir();	//------------------- Marshya
+
+
+void Pelanggan();
+void ProsesKasir();
+void Pembayaran();
+void History();
+void Exit();
+
+void Kasir_Tersedia();
+void print_barang();
 
 
 //============================================== Pembeli =================================================

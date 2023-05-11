@@ -12,28 +12,19 @@ Author			: Athalie Aurora, Claudia Berlian H, Marshya Nurrizatuzzahra
 
 /* ======= End of Header File ====== */
 
-void Pelanggan();
-void ProsesKasir();
-void Pembayaran();
-void History();
-void Exit();
+
+	Datakasir Kasir[5];
+	DataBarang list[10];
 
 
-void Kasir_Tersedia();
-void print_barang();
-
-Datakasir Kasir[5];
-DataBarang list[10];
-
-
-address_P Head_Pembeli = NULL;
-address_BB Head_BarangBelian = NULL;
-address_B Head_Barang = NULL;
-address_P Pembeli = NULL;
-address_B Barang;
-address_BB BarangBelian;
-address_A Antrian;
-address_TB TBawaan;
+	address_P Head_Pembeli = NULL;
+	address_BB Head_BarangBelian = NULL;
+	address_B Head_Barang = NULL;
+	address_P Pembeli = NULL;
+	address_B Barang;
+	address_BB BarangBelian;
+	address_A Antrian;
+	address_TB TBawaan;
 
 	// variabel Global
 	infotype lagi,tekan,pil,kembalian;
@@ -97,7 +88,7 @@ int main()
 				}
 		
 			case 4 :
-				
+				// Menu History
 				History();
 				break;
 
@@ -111,6 +102,15 @@ int main()
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
 
 
 void Kasir_Tersedia()
@@ -160,10 +160,10 @@ void Pelanggan()
 				
 	// Sambutan selamat datang ====================== Claudia
 	printf("--SElAMAT DATANG DI SUPERMAERKET MARCAU--");
-	printf("\n\n: ");
+	printf("\n\n");
 				
 	// Nama  dan tempat bawaan untuk pelanggan ====================== Athalie
-	printf("Tolong masukan nama Anda :\t");
+	printf("Tolong masukan NAMA Anda :\t");
 	scanf(" %s", &nama);
 				
 	printf("Silahkan pilih tempat bawaan anda\n");
@@ -176,18 +176,7 @@ void Pelanggan()
 						
 	while(Pembeli->next != NULL) 
 	{ Pembeli = Pembeli->next;}
-					
-			/*	
-				printf   ("\t\t  +==================================================+ \n");
-				printf   ("\t\t  |  SILAHKAN PILIH BARANG BAWAAN  YANG TERSEDIA      | \n");
-				printf   ("\t\t  |---------------------------------------------------| \n");
-				printf   ("\t\t  |               - KERANJANG                         | \n");
-				printf   ("\t\t  |               - TROLI                             | \n");
-				printf   ("\t\t  |---------------------------------------------------| \n");
-				printf("\t\t\t Ketik pilihan anda:");
-				scanf("%s", &pilih); //CLaudia
-			*/	
-				
+									
 	/*========== Menu Barang ===========*/
 	while (lagi == 1) 
 	{
@@ -285,6 +274,13 @@ void ProsesKasir()
 	Create_Node_Antrian(&Antrian);
 	Isi_Node_Antrian(&Antrian, Pembeli->Nama_Pembeli);
 	Ins_Akhir_Antrian(&Kasir[nokasir-1].next,Antrian);
+	
+	system("CLS");
+	printf ("\n\t   Kasir 1  : "); Tampil_List_Antrian(Kasir[0].next);
+	printf ("\n\t   Kasir 2  : "); Tampil_List_Antrian(Kasir[1].next);
+	printf ("\n\t   Kasir 3  :");  Tampil_List_Antrian(Kasir[2].next);
+	printf ("\n\t   Kasir 4  :");  Tampil_List_Antrian(Kasir[3].next);
+	printf ("\n\t   Kasir 5  :");  Tampil_List_Antrian(Kasir[4].next);
 	printf("\nAnda Sudah Masuk Antrian\n");
 
 	printf("___________________________________________________________________________\n");
@@ -314,8 +310,8 @@ void ProsesKasir()
 	
 }
 
-void Pembayaran()
 
+void Pembayaran()
 {
 	int item;
 					printf("Apakah anda ingin menambahkan atau mengurangi Item? \n1.Mengurangi Item\n2.Menambahkan Item\n3.Tidak\nInput Pilihan:");
@@ -608,8 +604,10 @@ void Pembayaran()
                    printf("Kembalian      : %d\n", kembalian);
                    printf("-----------------------------LUNAS---------------------------------------\n");
 				   printf("_________________________________________________________________________\n");	
-				   system("pause");	// ==========================================================================================
-						break;
+				   
+				   system("pause");	
+				   break;
+				   	
 			        
 			}
 }
@@ -619,11 +617,20 @@ void History()
 {
 	printHistoryBelian(Head_BarangBelian);
 	system("pause");
-	
 }
 
 void Exit()
-{
+{	
+	/*
+	char Answer;
+	printf("Apakah sudah pembayaran sudah lunas? (Y/N)");
+	
+	if (Answer == 'N' | Answer == 'N')
+	{
+		main();
+	} 
+	*/
+	
 	printf("Anda berada dikasir berapa(1-5)?: ");
 	scanf("%d",&i);
 	Dequeue_Antrian(&Kasir[i-1].next,&nama);
@@ -631,6 +638,7 @@ void Exit()
 	system("pause");
 	printf("Maaf Toko sudah ditutup");
 	main();
+		
 }
 
 
@@ -643,9 +651,9 @@ void tampil_menu()
 		 printf("\t|-----------------------------|");
 		printf(" \n\t|     2. PILIH KASIR          |\n");
 		printf("\t|-----------------------------|");
-		printf("\n\t|     3. PEMABAYARAN          |\n");
+		printf("\n\t|     3. PEMBAYARAN          |\n");
 		printf("\t|-----------------------------|");
-		printf(" \n\t|     4.   HISTORY            |\n");
+		printf(" \n\t|     4.   HISTORI BARANG            |\n");
 		printf("\t|-----------------------------|");
 		printf(" \n\t|     5.     EXIT             |\n");
 		printf("\t|-----------------------------|");

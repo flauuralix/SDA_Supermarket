@@ -154,7 +154,7 @@ void printHistoryBelian(Queue_BB Q)
 	else
 	{
 		printf("=============================================================\n");
-		printf("| %-20s | %-10s | %-10s |\n", "Nama Barang", "Harga", "Jumlah");
+		printf("| %-20s | %-10s | %-10s |\n", "Nama Barang", "Total Harga", "Jumlah");
 		printf("=============================================================\n");
 	
 		while(a != NULL)
