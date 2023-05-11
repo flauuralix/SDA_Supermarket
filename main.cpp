@@ -616,13 +616,7 @@ void History()
 {
 	char Answer;
 	printHistoryBelian(Head_BarangBelian);
-	if(isEmpty_BarangBelian(Head_BarangBelian))
-	{
-	printf("List Kosong\n");
-	}
-	else
-	{
-		
+/*	
 	printf("Apakah anda ingin menghapus history?");
 	if (Answer == 'Y' | Answer == 'y')
 	{
@@ -630,6 +624,7 @@ void History()
 	}
 		
 	}
+	*/
 	
 	
 	system("pause");
