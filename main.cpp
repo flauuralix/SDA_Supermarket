@@ -272,6 +272,13 @@ void Pelanggan()
 void ProsesKasir()
 
 {
+	printf ("\n\t   Kasir 1  : "); Tampil_List_Antrian(Kasir[0].next);
+	printf ("\n\t   Kasir 2  : "); Tampil_List_Antrian(Kasir[1].next);
+	printf ("\n\t   Kasir 3  :");  Tampil_List_Antrian(Kasir[2].next);
+	printf ("\n\t   Kasir 4  :");  Tampil_List_Antrian(Kasir[3].next);
+	printf ("\n\t   Kasir 5  :");  Tampil_List_Antrian(Kasir[4].next);
+		
+	
 	printf("\nPilih No. Kasir (1-5): ");
 	scanf("%d",&nokasir);
 	Antrian = NULL;
@@ -634,7 +641,7 @@ void tampil_menu()
        	 printf("\n\t|-----------------------------|");
 		printf(" \n\t|     1.  PELANGGAN           |\n");
 		 printf("\t|-----------------------------|");
-		printf(" \n\t|     2. PROSES KASIR         |\n");
+		printf(" \n\t|     2. PILIH KASIR          |\n");
 		printf("\t|-----------------------------|");
 		printf("\n\t|     3. PEMABAYARAN          |\n");
 		printf("\t|-----------------------------|");
