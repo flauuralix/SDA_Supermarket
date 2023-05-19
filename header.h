@@ -12,6 +12,8 @@ Author			: Athalie Aurora, Claudia Berlian H, Marshya Nurrizatuzzahra
 #include <stdlib.h>
 #include <malloc.h>
 #include "boolean.h"
+#include <cstring>
+
 
 #define nama(P) (P)->nama
 #define BarangBelian(P) (P)->BarangBelian
@@ -39,7 +41,7 @@ typedef struct List_Bawaan *address_TB;			// Mendefinisikan tipe data pointer ke
 	typedef struct List_Pembeli {
 	address_BB BarangBelian;
 	infochar Nama_Pembeli;
-	infotype No_Kasir;	
+	infotype No_Kasir;
 	infotype harga_barang;
 	address_P next;
 	} List_Pembeli;
@@ -76,8 +78,11 @@ typedef struct List_Bawaan *address_TB;			// Mendefinisikan tipe data pointer ke
 /*	Berkaitan dengan Kasir = Nomor kasir */
 	typedef struct Kasir{
 	infotype Nomor;
-	address_A next;
+	address_A next;	
 	} Datakasir;
+	
+
+	
 
 
 // 									------------------------------
@@ -97,6 +102,7 @@ void tampil_kasir();	//------------------- Marshya
 
 void Pelanggan();
 void ProsesKasir();
+void stokbarang();
 void Pembayaran();
 void History();
 void Exit();
