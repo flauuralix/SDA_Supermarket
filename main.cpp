@@ -31,7 +31,7 @@ infotype lagi,tekan,pil,kembalian;
 
 // struk
 infotype kode,jml,nokasir,harga=0,Nomor,i=0,stok,barang,harga_barang,uang,jmlTotal = 0;
-infochar nama,riwayat,Nama_Barang,pilih,Tempat_Bawa;
+infochar nama,riwayat,Nama_Barang,pilih,tempatbawa;
 
 
 
@@ -170,10 +170,10 @@ void Pelanggan() {
 
 	printf("Silahkan pilih tempat bawaan anda\n");
 	printf("Ketikan 'Keranjang' atau 'Troli' ");
-	scanf(" %s", &Tempat_Bawa);
+	scanf(" %s", &tempatbawa);
 
 	//Tambahkan Pelanggan ====================== Athalie
-	ModifEnqueue_Pembeli(&Head_Pembeli,&Head_BarangBelian,&TBawaan,nama,nokasir,Tempat_Bawa);
+	ModifEnqueue_Pembeli(&Head_Pembeli,&Head_BarangBelian,&TBawaan,nama,nokasir,tempatbawa);
 	Pembeli = Head_Pembeli;
 
 	while(Pembeli->next != NULL) {
@@ -582,7 +582,7 @@ void stokbarang() {
 }
 
 void Pembayaran() {
-printf("Anda berada dikasir berapa (1-5)?: ");
+printf("Anda berada di kasir berapa (1-5)?: ");
 scanf("%d", &i);
 Dequeue_Antrian(&Kasir[i - 1].next, &nama);
 
@@ -591,48 +591,52 @@ printf("\n");
 printf("\n--------------------------------------------------------------------------\n");
 printf("Nama Pelanggan  : %s\n", &nama);
 printf("Kasir           : %d\n", nokasir);
-printf("pilihan         : %s\n", &Tempat_Bawa);
+printf("Pilihan         : %s\n", &tempatbawa);
 printf("--------------------------------------------------------------------------\n");
-
 printf(" NAMA BARANG\t\tJUMLAH\t\t HARGA \n");
-
-int jmlTotal = 0;  // Inisialisasi jmlTotal dengan 0
-int harga = 0;  // Inisialisasi harga dengan 0
-
 for (int index = 1; index <= 10; index++) {
     if (list[index - 1].stok != 10) {
         int jmlbrg = 10 - list[index - 1].stok;
         printf("\n%s\t\tx%d \t\t %d\n", list[index - 1].nama, jmlbrg, list[index - 1].harga);
-        jmlTotal += jmlbrg;  // Menambahkan jmlbrg ke jmlTotal
-        harga += jmlbrg * list[index - 1].harga;  // Menambahkan harga barang ke harga
+    }
+}
+printf("--------------------------------------------------------------------------\n");
+
+int jmlTotal = 0;  // Inisialisasi jmlTotal dengan 0
+int harga = 0;    // Inisialisasi harga dengan 0
+for (int index = 1; index <= 10; index++) {
+    if (list[index - 1].stok != 10) {
+        int jmlbrg = 10 - list[index - 1].stok;
+        jmlTotal += jmlbrg;                      // Menambahkan jmlbrg ke jmlTotal
+        harga += jmlbrg * list[index - 1].harga; // Menambahkan harga barang ke harga
     }
 }
 
-printf("--------------------------------------------------------------------------\n");
 printf("\nTotal barang   : %d\n", jmlTotal);
 printf("Total Harga    : %d\n", harga);
-	printf("Uang Anda      : ");
-	scanf("%d", &uang);
-	if (uang >= harga) {
-		int kembalian = uang - harga;
-		printf("Kembalian      : %d\n", kembalian);
-	} else {
-		int sisa;
-		sisa = harga - uang;
-		printf("Maaf, uang yang Anda masukkan tidak cukup untuk melakukan pembayaran.\n");
-		printf("---------------------------TIDAK LUNAS------------------------------------\n");
-		printf("Sisa tagihan Anda sebesar %d.\n", sisa);
-		printf("Silakan masukkan uang tambahan untuk menyelesaikan transaksi.\n");
-		printf("Total Harga    : %d\n", sisa);
-		printf("Uang Anda      : ");
-		scanf("%d", &uang);
-		if (uang >= harga) {
-			int kembalian = uang - harga;
-			printf("Kembalian      : %d\n", kembalian);
 
-			printf("_________________________________________________________________________\n");
-		}
-	}
+printf("Uang Anda      : ");
+scanf("%d", &uang);
+if (uang >= harga) {
+    int kembalian = uang - harga;
+    printf("Kembalian      : %d\n", kembalian);
+} else {
+    int sisa;
+    sisa = harga - uang;
+    printf("Maaf, uang yang Anda masukkan tidak cukup untuk melakukan pembayaran.\n");
+    printf("---------------------------TIDAK LUNAS------------------------------------\n");
+    printf("Sisa tagihan Anda sebesar %d.\n", sisa);
+    printf("Silakan masukkan uang tambahan untuk menyelesaikan transaksi.\n");
+    printf("Total Harga    : %d\n", sisa);
+    printf("Uang Anda      : ");
+    scanf("%d", &uang);
+    if (uang >= harga) {
+        int kembalian = uang - harga;
+        printf("Kembalian      : %d\n", kembalian);
+
+        printf("_________________________________________________________________________\n");
+    }
+}
 	printf("-----------------------------LUNAS---------------------------------------\n");
 	printf("Terima kasih telah berbelanja!\n");
 	printf("Nama %s telah dihapus dari antrian\n",&nama);
