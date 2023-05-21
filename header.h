@@ -29,6 +29,7 @@ Author			: Athalie Aurora, Claudia Berlian H, Marshya Nurrizatuzzahra
 
 typedef int infotype;							// Mendefinisikan tipe data integer (infotype)
 typedef const char *infochar;					// Mendefinisikan tipe data string (infochar)
+
 typedef struct List_Pembeli *address_P;			// Mendefinisikan tipe data pointer ke struk List_Pembeli
 typedef struct List_Barang *address_B;			// Mendefinisikan tipe data pointer ke struk List_Barang 
 typedef struct List_BarangBelian *address_BB;	// Mendefinisikan tipe data pointer ke struk List_BarangBelian
@@ -43,6 +44,8 @@ typedef struct List_Bawaan *address_TB;			// Mendefinisikan tipe data pointer ke
 	infochar Nama_Pembeli;
 	infotype No_Kasir;
 	infotype harga_barang;
+	address_TB TempatBawaan;
+	
 	address_P next;
 	} List_Pembeli;
 	
@@ -104,7 +107,7 @@ void tampil_kasir();	//------------------- Marshya
 
 void Pelanggan();
 void ProsesKasir();
-void stokbarang();
+void StokBarang();
 void Pembayaran();
 void History();
 void Exit();
@@ -153,6 +156,13 @@ void Enqueue_BarangBelian(Queue_BB *Q, infotype harga, infochar nama_barang, inf
 void addHistoryBelian(Queue_BB *Q, infotype harga, infochar nama_barang, infotype jumlah_barang);
 void printHistoryBelian(Queue_BB Q);
 void deleteHistoryBelian(Queue_BB *Q);
+
+void printHistoryBelian(Queue_BB Q, Queue_P P, Queue_TB R);
+void printHistoryPembeli(Queue_P Q);
+
+void TestIsi();
+void TulisFile(List_BarangBelian data);
+void bacaFile();
 
 //============================================== Antrian ================================================
 
