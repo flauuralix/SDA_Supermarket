@@ -24,7 +24,7 @@ address_P Pembeli = NULL;
 address_B Barang;
 address_BB BarangBelian;
 address_A Antrian;
-address_TB TBawaan;
+address_TB TBawaan ;
 
 // variabel Global
 infotype lagi,tekan,pil,kembalian;
@@ -303,6 +303,7 @@ void Pelanggan() {
 void ProsesKasir()
 
 {
+
 	printf ("\n\t   Kasir 1  : ");
 	Tampil_List_Antrian(Kasir[0].next);
 	printf ("\n\t   Kasir 2  : ");
@@ -584,8 +585,8 @@ void stokbarang() {
 void Pembayaran() {
 printf("Anda berada di kasir berapa (1-5)?: ");
 scanf("%d", &i);
-Dequeue_Antrian(&Kasir[i - 1].next, &nama);
-
+ Dequeue_Antrian(&Kasir[i - 1].next, &nama);
+ 
 printf("__________________Struk Belanja__________________________________________\n");
 printf("\n");
 printf("\n--------------------------------------------------------------------------\n");
@@ -611,7 +612,6 @@ for (int index = 1; index <= 10; index++) {
         harga += jmlbrg * list[index - 1].harga; // Menambahkan harga barang ke harga
     }
 }
-
 printf("\nTotal barang   : %d\n", jmlTotal);
 printf("Total Harga    : %d\n", harga);
 
@@ -637,12 +637,13 @@ if (uang >= harga) {
         printf("_________________________________________________________________________\n");
     }
 }
+   
 	printf("-----------------------------LUNAS---------------------------------------\n");
 	printf("Terima kasih telah berbelanja!\n");
 	printf("Nama %s telah dihapus dari antrian\n",&nama);
 	printf("_________________________________________________________________________\n");
 	system("pause");
- 
+
 }
 
 

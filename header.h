@@ -84,6 +84,8 @@ typedef struct List_Bawaan *address_TB;			// Mendefinisikan tipe data pointer ke
 
 	
 
+	
+
 
 // 									------------------------------
 						  			  typedef address_P Queue_P;
@@ -167,6 +169,7 @@ void Ins_Akhir_Antrian (address_A *p, address_A PNew);
 void Del_Awal_Antrian (address_A * p, infochar * X);
 
 void Dequeue_Antrian(Queue_A *Q,infochar *X);
+
 
 
 
