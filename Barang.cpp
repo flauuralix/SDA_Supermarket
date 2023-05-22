@@ -129,21 +129,7 @@ F.S : Data dengan node baru Barang Belian (Nama barang, Harga, dan Jumlah Barang
 /*   			               Penambahan modul pada program  	    		        		*/
 
 
-void addHistoryBelian(Queue_BB *Q, infotype harga, infochar nama_barang, infotype jumlah_barang);
-void printHistoryBelian(Queue_BB Q);
-void deleteHistoryBelian(Queue_BB *Q);
 
-
-
-
-void addHistoryBelian(Queue_BB *Q, infotype harga, infochar nama_barang, infotype jumlah_barang)
-{
-	address_BB a = NULL;
-	Create_Node_BarangBelian(&a);
-	Isi_Node_BarangBelian(&a, harga, nama_barang, jumlah_barang);
-	Ins_Akhir_BarangBelian(&(*Q), a);
-}
-//------------------------------------------------------------------------------------------------------ Athalie
 
 void printHistoryBelian(Queue_BB Q)
 {
@@ -169,6 +155,56 @@ void printHistoryBelian(Queue_BB Q)
 }
 
 //------------------------------------------------------------------------------------------------------ Athalie
+
+
+void TulisFile(Queue_BB Q)
+{
+	address_BB a = Q;
+	FILE *file = fopen("History.txt", "a");
+	if (file == NULL)
+	{
+		printf("Gagal membuka file History.txt");
+        return;
+	}
+	
+	else
+	{
+		fprintf(file, "===================================================\n");
+		fprintf(file, "| %-20s | %-10s | %-10s |\n", "Nama Barang", "Total Harga", "Jumlah");
+		fprintf(file, "===================================================\n");
+	
+		while(a != NULL)
+		{
+			fprintf(file, "| %-20s | %-10d | %-10d |\n", Nama_Barang(a), Harga(a), Jumlah_Barang(a));
+			a = next(a);
+		}
+	
+		fprintf(file, "===================================================\n");
+	}
+	
+	fclose(file);
+}
+
+
+void bacaFile()
+{
+    FILE *file = fopen("History.txt", "r");
+    if (file == NULL)
+    {
+        printf("Gagal membuka file History.txt");
+        return;
+    }
+
+    char buffer[255];
+
+    while (fgets(buffer, sizeof(buffer), file) != NULL)
+    {
+        printf("%s", buffer);
+    }
+
+    fclose(file);
+}
+
 
 
 void deleteHistoryBelian(Queue_BB *Q)
@@ -261,52 +297,12 @@ void printHistoryPembeli(Queue_P P)
 */
 
 
-
-void TestIsi()
+void addHistoryBelian(Queue_BB *Q, infotype harga, infochar nama_barang, infotype jumlah_barang)
 {
-	List_BarangBelian data1 = {"Minyak goreng", 5, 125000};
-	List_BarangBelian data2 = {"Minyak Sawi", 5, 125000};
-	
-	TulisFile(data1);
-	TulisFile(data2);
-	bacaFile();
+	address_BB a = NULL;
+	Create_Node_BarangBelian(&a);
+	Isi_Node_BarangBelian(&a, harga, nama_barang, jumlah_barang);
+	Ins_Akhir_BarangBelian(&(*Q), a);
 }
 
 
-void TulisFile(List_BarangBelian data)
-{
-	
-	FILE *file = fopen("History.txt", "a");
-	if (file == NULL)
-	{
-		printf("Gagal membuka file History.txt");
-        return;
-	}
-	
-	fprintf(file, "Nama Barang : %s\n", data.Nama_Barang);
-    fprintf(file, "Jumlah Barang : %s\n", data.Jumlah_Barang);
-    fprintf(file, "Total Biaya: %d\n", data.Harga);
-    fprintf(file, "-----------------------------------\n");
-
-    fclose(file);
-	
-}
-
-void bacaFile()
-{
-    FILE *file = fopen("History.txt", "r");
-    if (file == NULL)
-    {
-        printf("Gagal membuka file History.txt");
-        return;
-    }
-
-    char buffer[255];
-
-    while (fgets(buffer, sizeof(buffer), file) != NULL)
-    {
-        printf("%s", buffer);
-    }
-
-    fclose(file);
-}

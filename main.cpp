@@ -706,10 +706,11 @@ if (uang >= harga) {
 void History() 
 {
 
-	printHistoryBelian(Head_BarangBelian); // Barang Belian
+	//printHistoryBelian(Head_BarangBelian); // Barang Belian
 	//printHistoryPembeli(Head_Pembeli); 		// Pembeli
 	//printHistoryBelian(Head_BarangBelian, Head_Pembeli, TBawaan);
-	//TestIsi();
+	TulisFile(Head_BarangBelian);
+	bacaFile();
 	system("pause");
 	main();
 }
