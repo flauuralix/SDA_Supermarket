@@ -44,8 +44,7 @@ typedef struct List_Bawaan *address_TB;			// Mendefinisikan tipe data pointer ke
 	infochar Nama_Pembeli;
 	infotype No_Kasir;
 	infotype harga_barang;
-	address_TB TempatBawaan;
-	
+	address_TB TempatBawaan;	
 	address_P next;
 	} List_Pembeli;
 	
