@@ -180,7 +180,7 @@ void Del_Awal_Antrian (address_A * p, infochar * X);
 
 void Dequeue_Antrian(Queue_A *Q,infochar *X);
 
-//
+
 void data_antrian (address_A p);
 
 
