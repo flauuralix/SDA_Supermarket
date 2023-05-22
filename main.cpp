@@ -338,11 +338,7 @@ void Pelanggan()
 
 void ProsesKasir()
 {
-<<<<<<< HEAD
-
-=======
 	printf("\n\n\t\t\t ANTRIAN KASIR\t\t\t\n");
->>>>>>> de936f936ab8f20a584688a5712f5e4d8ec4e1c3
 	printf ("\n\t   Kasir 1  : ");
 	Tampil_List_Antrian(Kasir[0].next);
 	printf ("\n\t   Kasir 2  : ");
@@ -692,10 +688,10 @@ if (uang >= harga) {
 void History() 
 {
 
-	//printHistoryBelian(Head_BarangBelian); // Barang Belian
+	printHistoryBelian(Head_BarangBelian); // Barang Belian
 	//printHistoryPembeli(Head_Pembeli); 		// Pembeli
 	//printHistoryBelian(Head_BarangBelian, Head_Pembeli, TBawaan);
-	TestIsi();
+	//TestIsi();
 	system("pause");
 	main();
 }
