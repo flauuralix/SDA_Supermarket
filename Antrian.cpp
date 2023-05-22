@@ -125,5 +125,27 @@ void Dequeue_Antrian(Queue_A *Q,infochar *X)
 	Del_Awal_Antrian(&(*Q),&(*X));
 }
 //------------------------------------------------------------------------------------------------------ 07
+//============================================================================================
+/*   			               Penambahan modul pada program  	    		        		*/
 
+
+void data_antrian (address_A p)
+{
+	int i = 0;
+	if(isEmpty_Antrian(p)){
+		printf("List Kosong\n");
+	}
+	else{		
+		while(!isEmpty_Antrian(p)){
+//			printf("%d. %s",i,&p->nama);
+			p = next(p);
+			if(p != Nil){
+				printf("\t\n");
+			}
+		i++;	
+		}
+		printf("Jumlah pelanggan : %d\n",i);
+	}	
+	
+}
 
