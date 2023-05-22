@@ -13,6 +13,8 @@ Author			: Athalie Aurora, Claudia Berlian H, Marshya Nurrizatuzzahra
 #include <malloc.h>
 #include "boolean.h"
 #include <cstring>
+#define MAX_LENGTH 100
+
 
 
 #define nama(P) (P)->nama
@@ -74,7 +76,6 @@ typedef struct List_Bawaan *address_TB;			// Mendefinisikan tipe data pointer ke
 /*	Berkaitan dengan Antrian = Nama Pelanggan, Pembayaran sukses -> lanjut antrian berikutnya */
 	typedef struct List_Antrian {
 	infochar nama;
-	infotype data_antrian;
 	address_A next;
 	} List_Antrian;
 	
@@ -84,8 +85,10 @@ typedef struct List_Bawaan *address_TB;			// Mendefinisikan tipe data pointer ke
 	address_A next;	
 	} Datakasir;
 	
-
-	
+	typedef struct Node_Antrian {
+    char Nama[50];
+    struct Node_Antrian* next;
+} Node_Antrian;
 
 	
 
@@ -180,10 +183,14 @@ void Del_Awal_Antrian (address_A * p, infochar * X);
 
 void Dequeue_Antrian(Queue_A *Q,infochar *X);
 
-
 void data_antrian (address_A p);
 
+void Del_Antrian (address_A * p, infochar * X);
+void DelAntrian(Queue_A *Q,infochar *X);
 
-
+void Hapusantrian(address_A *p,infochar *X);
+void Hapus_Last(address_A (*p));
+void HapusFirst(address_A (*p));
+void DelAntrian(address_A *p, infochar *X);
 
 #endif

@@ -384,9 +384,6 @@ void StokBarang() {
 			printf("Anda berada dikasir berapa(1-5)?: ");
 			scanf("%d",&i);
 			Dequeue_Antrian(&Kasir[i-1].next,&nama);
-
-			printf("Nama %s telah dihapus dari antrian silahkan antri kembali\n",&nama);
-			system("pause");
 			lagi = 1;
 			Enqueue_Pembeli(&Head_Pembeli,&Head_BarangBelian,nama,nokasir);
 			Pembeli = Head_Pembeli;
@@ -414,9 +411,9 @@ void StokBarang() {
 							scanf("%d", &jml);
 						}while(list[kode-1].stok<jml);
 						jmlTotal -= jml;
-						printf("\n\nTotal barang: %d\n",jmlTotal);
+						printf("\n\nTotal barang yang dikurangi: %d\n",jmlTotal);
 						harga -= (list[kode-1].harga * jml);
-						printf("\n\nTotal Harga: %d\n",harga);
+						printf("\n\nTotal Harga yang dikurangi: %d\n",harga);
 						list[kode-1].stok = list[kode-1].stok+jml;
 						list[kode-1].jml -= jml;
 					} else {
@@ -425,9 +422,10 @@ void StokBarang() {
 						jmlTotal -= jml;
 						printf("\n\nTotal %s: %d\n",Nama_Barang,10 - list[kode-1].stok);
 //						printf("\nTotal %s : %d\n", Nama_Barang, list[kode-1].stok + jml);
-						printf("\n\nTotal barang: %d\n",jmlTotal);
+						printf("\n\nTotal barang yang dikurangi: %d\n",jmlTotal);
 						harga -= list[kode-1].harga * jml;
-						printf("\n\nTotal Harga: %d\n",harga);
+						printf("\n\nTotal Harga yang dikurangi: %d\n",harga);
+						
 					}
 			// =======================================================================
 				Pembeli->BarangBelian = Head_BarangBelian;
@@ -456,9 +454,9 @@ void StokBarang() {
 							scanf("%d", &jml);
 						}while(list[kode-1].stok<jml);
 						jmlTotal -= jml;
-						printf("\n\nTotal barang: %d\n",jmlTotal);
+						printf("\n\nTotal barang yang dikurangi: %d\n",jmlTotal);
 						harga -= (list[kode-1].harga * jml);
-						printf("\n\nTotal Harga: %d\n",harga);
+						printf("\n\nTotal Harga yang dikurangi: %d\n",harga);
 						list[kode-1].stok = list[kode-1].stok+jml;
 						list[kode-1].jml -= jml;
 					} else {
@@ -467,9 +465,10 @@ void StokBarang() {
 						jmlTotal -= jml;
 						printf("\n\nTotal %s: %d\n",Nama_Barang,10 - list[kode-1].stok);
 //						printf("\nTotal %s : %d\n", Nama_Barang, list[kode-1].stok + jml);
-						printf("\n\nTotal barang: %d\n",jmlTotal);
+						printf("\n\nTotal barang yang dikurangi: %d\n",jmlTotal);
 						harga -= list[kode-1].harga * jml;
-						printf("\n\nTotal Harga: %d\n",harga);
+						printf("\n\nTotal Harga yang dikurangi: %d\n",harga);
+						
 					}
 							Pembeli->BarangBelian = Head_BarangBelian;
 							Head_BarangBelian = Pembeli->BarangBelian;
@@ -502,7 +501,7 @@ void StokBarang() {
 
 			break;
 		}
-
+}
 		break;
 		case 2: {
 
@@ -540,9 +539,9 @@ void StokBarang() {
 							scanf("%d", &jml);
 						}while(list[kode-1].stok<jml);
 						jmlTotal += jml;
-						printf("\n\nTotal barang: %d\n",jmlTotal);
+						printf("\n\nTotal barang yang ditambahkan: %d\n",jmlTotal);
 						harga += (list[kode-1].harga * jml);
-						printf("\n\nTotal Harga: %d\n",harga);
+						printf("\n\nTotal Harga yang ditambahakan: %d\n",harga);
 						list[kode-1].stok = list[kode-1].stok-jml;
 						list[kode-1].jml += jml;
 					} else {
@@ -551,9 +550,9 @@ void StokBarang() {
 						jmlTotal += jml;
 						printf("\n\nTotal %s: %d\n",Nama_Barang,10 - list[kode-1].stok);
 //						printf("\nTotal %s : %d\n", Nama_Barang, list[kode-1].stok + jml);
-						printf("\n\nTotal barang: %d\n",jmlTotal);
+						printf("\n\nTotal barang yang ditambahkan: %d\n",jmlTotal);
 						harga += list[kode-1].harga * jml;
-						printf("\n\nTotal Harga: %d\n",harga);
+						printf("\n\nTotal Harga yang ditambahkan: %d\n",harga);
 					}
 				Pembeli->BarangBelian = Head_BarangBelian;
 				Head_BarangBelian = Pembeli->BarangBelian;
@@ -581,9 +580,9 @@ void StokBarang() {
 							scanf("%d", &jml);
 						}while(list[kode-1].stok<jml);
 						jmlTotal += jml;
-						printf("\n\nTotal barang: %d\n",jmlTotal);
+						printf("\n\nTotal barang yang ditambahkan: %d\n",jmlTotal);
 						harga += (list[kode-1].harga * jml);
-						printf("\n\nTotal Harga: %d\n",harga);
+						printf("\n\nTotal Harga yang ditambahkan: %d\n",harga);
 						list[kode-1].stok = list[kode-1].stok-jml;
 						list[kode-1].jml += jml;
 					} else {
@@ -592,9 +591,9 @@ void StokBarang() {
 						jmlTotal += jml;
 //						printf("\n\nTotal %s: %d\n",Nama_Barang,10 - list[kode-1].stok);
 						printf("\nTotal %s : %d\n", Nama_Barang, list[kode-1].stok + jml);
-						printf("\n\nTotal barang: %d\n",jmlTotal);
+						printf("\n\nTotal barang yang ditambahkan: %d\n",jmlTotal);
 						harga += list[kode-1].harga * jml;
-						printf("\n\nTotal Harga: %d\n",harga);
+						printf("\n\nTotal Harga yang ditambahkan: %d\n",harga);
 					}
 
 							Pembeli->BarangBelian = Head_BarangBelian;
@@ -635,7 +634,7 @@ void StokBarang() {
 	}
 }
 }
-}
+
 
 void Pembayaran() {
 printf("Anda berada di kasir berapa (1-5)?: ");
