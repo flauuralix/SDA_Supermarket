@@ -179,4 +179,134 @@ void deleteHistoryBelian(Queue_BB *Q)
 //------------------------------------------------------------------------------------------------------ Athalie
 
 
+void printHistoryPembeli(Queue_P Q)
+{
+	address_P a = Q;
+	if(isEmpty_Pembeli(Q))
+	{
+	printf("List Kosong\n");
+	}
+	else
+	{
+		printf("=============================================================\n");
+		printf("| %-20s | %-10s |\n", "Kasir No", "Nama Pembeli");
+		printf("=============================================================\n");
+	
+		while(a != NULL)
+		{
+			printf("| %-10d | %-20s |\n", No_Kasir(a), Nama_Pembeli(a));
+			a = next(a);
+		
+		}
+	
+		printf("=============================================================\n");
+	}
+}
 
+
+void printHistoryBelian(Queue_BB Q, Queue_P P, Queue_TB R)
+{
+	address_BB a = Q;
+	address_P b = P;
+	address_TB t = R;
+	
+	if(isEmpty_BarangBelian(Q) || isEmpty_Pembeli(P))
+	{
+	printf("List Kosong\n");
+	}
+	else
+	{
+		printf("=============================================================\n");
+		printf("| %-20s | %-20s | %-20s | %-20s | %-10s | %-10s |\n", "Kasir No", "Nama Pembeli", "Tempat Bawaan", "Nama Barang", "Total Harga", "Jumlah");
+		printf("=============================================================\n");
+	
+		while(a != NULL)
+		{
+			printf("| %-20s | %-20s | %-20s | %-20s | %-10d | %-10d |\n", No_Kasir(b), Nama_Pembeli(b), Tempat_Bawaan(t), Nama_Barang(a), Harga(a), Jumlah_Barang(a));
+			a = next(a);
+			b = next(b);
+			t = next(t);
+		}
+	
+		printf("=============================================================\n");
+	}
+}
+	
+	
+/*
+void printHistoryPembeli(Queue_P P)
+{
+	address_P a = P;
+	
+	FILE *file = fopen("history.txt", "r");
+	    if (file != NULL) {
+        printf("Riwayat Pembeli:\n");
+        printf("===========================================================\n");
+        printf("| %-20s | %-20s | %-10s | %-10s |\n", "Nama Pembeli", "Nama Barang", "No Kasir", "Harga Barang");
+        printf("===========================================================\n");
+        
+        while (fscanf(file, "%[^|]|%[^|]|%d|%d|%[^\n]\n", pembeli.namaPembeli, pembeli.namaBarang, &pembeli.noKasir, &pembeli.hargaBarang, pembeli.tempatBawaan) == 5) {
+            printf("| %-20s | %-20s | %-10d | %-10d |\n", pembeli.namaPembeli, pembeli.namaBarang, pembeli.noKasir, pembeli.hargaBarang);
+        }
+        
+        printf("===========================================================\n");
+        
+        fclose(file);
+    } else {
+        printf("Gagal membuka file history.txt\n");
+    }
+	
+	
+}
+*/
+
+
+
+void TestIsi()
+{
+	List_BarangBelian data1 = {"Minyak goreng", 5, 125000};
+	List_BarangBelian data2 = {"Minyak Sawi", 5, 125000};
+	
+	TulisFile(data1);
+	TulisFile(data2);
+	bacaFile();
+}
+
+
+void TulisFile(List_BarangBelian data)
+{
+	
+	FILE *file = fopen("History.txt", "a");
+	if (file == NULL)
+	{
+		printf("Gagal membuka file History.txt");
+        return;
+	}
+	
+	fprintf(file, "Nama Barang : %s\n", data.Nama_Barang);
+    fprintf(file, "Jumlah Barang : %s\n", data.Jumlah_Barang);
+    fprintf(file, "Total Biaya: %d\n", data.Harga);
+    fprintf(file, "-----------------------------------\n");
+
+    fclose(file);
+	
+}
+
+void bacaFile()
+{
+    FILE *file = fopen("History.txt", "r");
+    if (file == NULL)
+    {
+        printf("Gagal membuka file History.txt");
+        return;
+    }
+
+    char buffer[255];
+
+    while (fgets(buffer, sizeof(buffer), file) != NULL)
+    {
+        printf("%s", buffer);
+    }
+
+    fclose(file);
+}
