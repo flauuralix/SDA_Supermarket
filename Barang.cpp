@@ -302,7 +302,5 @@ void addHistoryBelian(Queue_BB *Q, infotype harga, infochar nama_barang, infotyp
 	address_BB a = NULL;
 	Create_Node_BarangBelian(&a);
 	Isi_Node_BarangBelian(&a, harga, nama_barang, jumlah_barang);
-	Ins_Akhir_BarangBelian(&(*Q), a);
+	Ins_Akhir_BarangBelian(&(*Q),a);
 }
-
-
