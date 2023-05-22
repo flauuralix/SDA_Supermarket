@@ -273,7 +273,7 @@ void Pelanggan()
 					{
 						do
 						{
-							printf("\nMaaf, jumlah barang yang Anda beli melebihi stok yang tersedia.\n");//----------------------------------claudia 
+							printf("\nMaaf, jumlah barang yang Anda beli melebihi stok yang tersedia.\n");
 							printf("Stok %s yang tersedia: %d\n", Nama_Barang, list[kode-1].stok);
 							printf("Masukkan jumlah barang yang akan dibeli: ");
 							scanf("%d", &jml);
@@ -295,7 +295,7 @@ void Pelanggan()
 							printf("\n\nTotal barang: %d\n",jmlTotal);
 							harga += list[kode-1].harga * jml;
 							printf("\n\nTotal Harga: %d\n",harga);
-						}//-----------------------------------------------------------------------------------
+						}
 //
 //								if(list[kode-1].stok<0 )
 //								{
@@ -339,16 +339,26 @@ void Pelanggan()
 void ProsesKasir()
 {
 	printf("\n\n\t\t\t ANTRIAN KASIR\t\t\t\n");
-	printf ("\n\t   Kasir 1  : ");
-	Tampil_List_Antrian(Kasir[0].next);
+	printf ("\n\t   Kasir 1  ");
+//	Tampil_List_Antrian(Kasir[0].next);
+	data_antrian (Kasir[0].next);
+//	printf ("\n\t   Total barang   : %d\n", jmlTotal);
+	
 	printf ("\n\t   Kasir 2  : ");
-	Tampil_List_Antrian(Kasir[1].next);
+	data_antrian (Kasir[1].next);
+//	printf ("\n\t   Total barang   : %d\n", jmlTotal);
+	
 	printf ("\n\t   Kasir 3  :");
-	Tampil_List_Antrian(Kasir[2].next);
+	data_antrian (Kasir[2].next);
+//	printf ("\n\t   Total barang   : %d\n", jmlTotal);
+	
 	printf ("\n\t   Kasir 4  :");
-	Tampil_List_Antrian(Kasir[3].next);
+	data_antrian (Kasir[3].next);
+//	printf ("\n\t   Total barang   : %d\n", jmlTotal);
+	
 	printf ("\n\t   Kasir 5  :");
-	Tampil_List_Antrian(Kasir[4].next);
+	data_antrian (Kasir[4].next);
+//	printf ("\n\t   Total barang   : %d\n", jmlTotal);
 
 
 	printf("\nPilih No. Kasir (1-5): ");
@@ -395,7 +405,7 @@ void StokBarang() {
 					Nama_Barang = list[kode-1].nama;
 					if(list[kode-1].stok<jml) {
 						do{
-							printf("\nMaaf, jumlah barang yang Anda beli melebihi stok yang tersedia.\n");//----------------------------------claudia 
+							printf("\nMaaf, jumlah barang yang Anda beli melebihi stok yang tersedia.\n");
 							printf("Stok %s yang tersedia: %d\n", Nama_Barang, list[kode-1].stok);
 							printf("Masukkan jumlah barang yang akan dibeli: ");
 							scanf("%d", &jml);
@@ -415,7 +425,7 @@ void StokBarang() {
 						printf("\n\nTotal barang: %d\n",jmlTotal);
 						harga -= list[kode-1].harga * jml;
 						printf("\n\nTotal Harga: %d\n",harga);
-					}//---------------------------------------------------------------------------------
+					}
 			// =======================================================================
 				Pembeli->BarangBelian = Head_BarangBelian;
 				Head_BarangBelian = Pembeli->BarangBelian;
@@ -435,7 +445,7 @@ void StokBarang() {
 					Nama_Barang = list[kode-1].nama;
 					if(list[kode-1].stok<jml) {
 						do{
-							printf("\nMaaf, jumlah barang yang Anda beli melebihi stok yang tersedia.\n");//----------------------------------claudia 
+							printf("\nMaaf, jumlah barang yang Anda beli melebihi stok yang tersedia.\n");
 							printf("Stok %s yang tersedia: %d\n", Nama_Barang, list[kode-1].stok);
 							printf("Masukkan jumlah barang yang akan dibeli: ");
 							scanf("%d", &jml);
@@ -455,7 +465,7 @@ void StokBarang() {
 						printf("\n\nTotal barang: %d\n",jmlTotal);
 						harga -= list[kode-1].harga * jml;
 						printf("\n\nTotal Harga: %d\n",harga);
-					}//---------------------------------------------------------------------------------
+					}
 							Pembeli->BarangBelian = Head_BarangBelian;
 							Head_BarangBelian = Pembeli->BarangBelian;
 							Enqueue_BarangBelian(&Head_BarangBelian,harga,Nama_Barang,jml);
@@ -517,7 +527,7 @@ void StokBarang() {
 					Nama_Barang = list[kode-1].nama;
 					if(list[kode-1].stok<jml) {
 						do{
-							printf("\nMaaf, jumlah barang yang Anda beli melebihi stok yang tersedia.\n");//----------------------------------claudia 
+							printf("\nMaaf, jumlah barang yang Anda beli melebihi stok yang tersedia.\n");
 							printf("Stok %s yang tersedia: %d\n", Nama_Barang, list[kode-1].stok);
 							printf("Masukkan jumlah barang yang akan dibeli: ");
 							scanf("%d", &jml);
@@ -537,7 +547,7 @@ void StokBarang() {
 						printf("\n\nTotal barang: %d\n",jmlTotal);
 						harga += list[kode-1].harga * jml;
 						printf("\n\nTotal Harga: %d\n",harga);
-					}//------------------------------------------------------------------------------
+					}
 				Pembeli->BarangBelian = Head_BarangBelian;
 				Head_BarangBelian = Pembeli->BarangBelian;
 				Enqueue_BarangBelian(&Head_BarangBelian,harga,Nama_Barang,jml);
@@ -556,7 +566,7 @@ void StokBarang() {
 					Nama_Barang = list[kode-1].nama;
 					if(list[kode-1].stok<jml) {
 						do{
-							printf("\nMaaf, jumlah barang yang Anda beli melebihi stok yang tersedia.\n");//----------------------------------claudia 
+							printf("\nMaaf, jumlah barang yang Anda beli melebihi stok yang tersedia.\n");
 							printf("Stok %s yang tersedia: %d\n", Nama_Barang, list[kode-1].stok);
 							printf("Masukkan jumlah barang yang akan dibeli: ");
 							scanf("%d", &jml);
@@ -576,7 +586,7 @@ void StokBarang() {
 						printf("\n\nTotal barang: %d\n",jmlTotal);
 						harga += list[kode-1].harga * jml;
 						printf("\n\nTotal Harga: %d\n",harga);
-					}//---------------------------------------------------------------------------------
+					}
 
 							Pembeli->BarangBelian = Head_BarangBelian;
 							Head_BarangBelian = Pembeli->BarangBelian;
@@ -622,7 +632,7 @@ void Pembayaran() {
 printf("Anda berada di kasir berapa (1-5)?: ");
 scanf("%d", &i);
  Dequeue_Antrian(&Kasir[i - 1].next, &nama);
-//------------------------------------------------------------------------------------claudia 
+ 
 printf("__________________Struk Belanja__________________________________________\n");
 printf("\n");
 printf("\n--------------------------------------------------------------------------\n");
@@ -678,7 +688,6 @@ if (uang >= harga) {
 	printf("Terima kasih telah berbelanja!\n");
 	printf("Nama %s telah dihapus dari antrian\n",&nama);
 	printf("_________________________________________________________________________\n");
-//------------------------------------------------------------------------------------claudia 
 	system("pause");
 
 }
