@@ -121,10 +121,6 @@ F.S :
 /*   			               Penambahan modul pada program  	    		        		*/
 
 
-
-
-
-
 // Tempat Bawaan
 void Create_Node_TempatBawaan(address_TB *t)
 {
@@ -199,4 +195,7 @@ void ModifEnqueue_Pembeli(Queue_P *Q, Queue_BB *P, Queue_TB *T, infochar Nama_Pe
     /*Ins_Akhir_TempatBawaan(&(*T), t); // Memasukan node Tempat Bawaan yang telah dibuat pada akhir antrian Tempat Bawaan
     */
 }
+//------------------------------------------------------------------------------------------------------ Athalie
+
+
 
