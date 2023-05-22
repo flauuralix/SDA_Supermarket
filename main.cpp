@@ -17,6 +17,7 @@ Datakasir Kasir[5];
 DataBarang list[10];
 
 
+
 address_P Head_Pembeli = NULL;
 address_BB Head_BarangBelian = NULL;
 address_B Head_Barang = NULL;
@@ -396,12 +397,14 @@ void StokBarang() {
 			switch(lagi) {
 				case 1:
 					system ("cls");
+					jmlTotal = 0;
+                    harga=0;
 					print_barang();
 					printf("\nPilih Barang: ");
 					scanf("%d",&kode);
 					printf("\nMasukan Jumlah Barang: ");
 					scanf("%d",&jml);
-
+                     
 					Nama_Barang = list[kode-1].nama;
 					if(list[kode-1].stok<jml) {
 						do{
@@ -436,6 +439,8 @@ void StokBarang() {
 			switch(lagi) {
 				case 1:
 					system ("cls");
+					jmlTotal = 0;
+                    harga=0;
 					print_barang();
 					printf("\nPilih Barang: ");
 					scanf("%d",&kode);
@@ -518,6 +523,8 @@ void StokBarang() {
 			switch(lagi) {
 				case 1:
 					system ("cls");
+					jmlTotal = 0;
+                    harga=0;
 					print_barang();
 					printf("\nPilih Barang: ");
 					scanf("%d",&kode);
@@ -557,6 +564,8 @@ void StokBarang() {
 			switch(lagi) {
 				case 1:
 					system ("cls");
+					jmlTotal = 0;
+                    harga=0;
 					print_barang();
 					printf("\nPilih Barang: ");
 					scanf("%d",&kode);
@@ -581,8 +590,8 @@ void StokBarang() {
 						list[kode-1].stok=list[kode-1].stok-jml;
 						list[kode-1].jml += jml;
 						jmlTotal += jml;
-						printf("\n\nTotal %s: %d\n",Nama_Barang,10 - list[kode-1].stok);
-//						printf("\nTotal %s : %d\n", Nama_Barang, list[kode-1].stok + jml);
+//						printf("\n\nTotal %s: %d\n",Nama_Barang,10 - list[kode-1].stok);
+						printf("\nTotal %s : %d\n", Nama_Barang, list[kode-1].stok + jml);
 						printf("\n\nTotal barang: %d\n",jmlTotal);
 						harga += list[kode-1].harga * jml;
 						printf("\n\nTotal Harga: %d\n",harga);
