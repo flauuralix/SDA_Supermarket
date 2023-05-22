@@ -152,17 +152,18 @@ void Del_Awal_BarangBelian (address_BB * p, infochar * X);
 void Enqueue_BarangBelian(Queue_BB *Q, infotype harga, infochar nama_barang, infotype jumlah);
 
 
+void printHistoryBelian(Queue_BB Q);
+void TulisFile(Queue_BB Q);
+void bacaFile();
+
+
+
 //Test
 void addHistoryBelian(Queue_BB *Q, infotype harga, infochar nama_barang, infotype jumlah_barang);
-void printHistoryBelian(Queue_BB Q);
 void deleteHistoryBelian(Queue_BB *Q);
 
 void printHistoryBelian(Queue_BB Q, Queue_P P, Queue_TB R);
 void printHistoryPembeli(Queue_P Q);
-
-void TestIsi();
-void TulisFile(List_BarangBelian data);
-void bacaFile();
 
 //============================================== Antrian ================================================
 
